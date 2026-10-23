@@ -1,0 +1,81 @@
+# Compiled files
+/vendor/
+/node_modules/
+
+# Environment files
+/.env
+/.env.backup
+/.env.example
+/.env.production
+/.env.testing
+/.env.staging
+/.env.local
+/.env.*.local
+
+# Logs
+/storage/logs/
+/*.log
+
+# IDE and editors
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# PHPUnit
+/.phpunit.result.cache
+/.phpunit.cache/
+
+# Pest
+/.pest.cache/
+
+# Coverage
+/coverage/
+/*.cov
+
+# Build/Laravel-specific
+public/storage
+/public/hot
+
+# Local configs and dumps
+docker-compose.override.yml
+.env.docker
+.phpunit.xml.dist
+
+# Temporary and cache
+/bootstrap/cache/*.php
+/storage/framework/cache/data/
+/storage/framework/sessions/*
+/storage/framework/views/*.php
+/storage/framework/views/*
+/storage/debugbar/
+/storage/ telle/
+
+# Misc
+*.zip
+*.tar.gz
+*.7z
+*.rar
+*.pdf
+*.md
+*.markdown
+*.patch
+*.diff
+*.bak
+*.orig
+*.rej
+*.tmp
+
+# Optional: ignore local dev notes if you want
+/notes/
+*.notes
