@@ -1,0 +1,200 @@
+================================================================================
+JOUR 03 — BASE DE DONNÉES, MIGRATIONS ET SEEDERS
+================================================================================
+
+1. OBJECTIF DU JOUR
+--------------------------------------------------------------------------------
+- connecter ton application à une base de données,
+- créer et comprendre les migrations,
+- créer et comprendre les seeders,
+- remplir la base de données avec des données fiables,
+- préparer les modèles Eloquent,
+- vérifier le cycle complet base → migration → modèle → données.
+
+Ce qu'il faut retenir : une migration est l'historique de ta base, un seeder est
+un moyen reproductible de remplir la base, et les deux doivent être utilisés pour
+garder ton environnement reproductible.
+
+2. OBJECTIFS PRÉCIS
+--------------------------------------------------------------------------------
+- vérifier ta connexion à la base,
+- créer une migration,
+- créer un seeder,
+- remplir la base,
+- créer un modèle associé,
+- vérifier la cohérence entre migration et modèle,
+- utiliser php artisan migrate et php artisan db:seed,
+- expliquer les différences entre migration et seeder.
+
+3. PRÉREQUIS
+--------------------------------------------------------------------------------
+- Jours 1 et 2 faits,
+- un projet Laravel,
+- une base de données accessible localement,
+- savoir lire une erreur de connexion SQL,
+- savoir utiliser php artisan.
+
+4. PLANNING
+--------------------------------------------------------------------------------
+Matin — 3h
+- 30 min : révision active du jour 2,
+- 45 min : bases de données et connexion,
+- 45 min : migrations,
+- 45 min : seeders,
+- 15 min : correction.
+
+Pause méridienne — au moins 30 min.
+
+Après-midi — 3h
+- 30 min : modèle Eloquent et lien migration/modèle,
+- 30 min : données fiables,
+- 60 min : exercices unifiés,
+- 30 min : lecture minimale de la doc,
+- 30 min : bilan, suivi, questions.
+
+Soir — 30 min
+- revoir les notions centrales.
+
+5. NOTIONS À APPRENDRE
+--------------------------------------------------------------------------------
+- base de données Laravel,
+- configuration .env et DB_*,
+- migrations et schema builder,
+- seeders et factories,
+- Eloquent et modèle,
+- lien migration → modèle → données,
+- php artisan migrate et db:seed,
+- comment éviter les erreurs classiques de migration.
+
+6. RESSOURCES À CONSULTER
+--------------------------------------------------------------------------------
+Documentation officielle en priorité :
+- https://laravel.com/docs/database
+- https://laravel.com/docs/migrations
+- https://laravel.com/docs/seeding
+- https://laravel.com/docs/eloquent
+- https://laravel.com/docs/factories
+
+Ressources disponibles :
+- Laracasts — "30 Days to Learn Laravel" : https://laracasts.com/series/30-days-to-learn-laravel-11
+- Laravel News Bootcamp : https://laravel.com/learn
+
+7. VIDÉOS À REGARDER
+--------------------------------------------------------------------------------
+- pour comprendre migrations et seeders :
+  https://www.youtube.com/watch?v=gaW9KODumUg
+- pour un premier contact avec Eloquent :
+  https://www.youtube.com/watch?v=2p6m2c3s4e8
+
+Règle d'or : vois une vidéo pour comprendre, lis la doc pour la précision.
+
+8. COMMANDES UTILES LE JOUR 03
+--------------------------------------------------------------------------------
+- créer une migration :
+    php artisan make:migration create_articles_table
+- créer un seeder :
+    php artisan make:seeder ArticleSeeder
+- créer une factory :
+    php artisan make:factory ArticleFactory
+- lancer les migrations :
+    php artisan migrate
+- lancer les seeders :
+    php artisan db:seed --class=ArticleSeeder
+- voir les migrations :
+    php artisan migrate:status
+
+Tu peux lire :
+- /database/migrations,
+- /database/seeders,
+- /database/factories,
+- /app/Models.
+
+9. EXERCICES PRATIQUES
+--------------------------------------------------------------------------------
+Exercice 03.1 — Connexion à la base
+- configure la base dans .env,
+- teste la connexion,
+- vérifie que tu peux interagir avec la base.
+
+Exercice 03.2 — Migration
+- crée une migration,
+- écris les colonnes,
+- lance la migration,
+- vérifie la table créée.
+
+Exercice 03.3 — Seeder
+- crée un seeder,
+- remplit quelques lignes,
+- lance le seeder,
+- vérifie que les données existent.
+
+Exercice 03.4 — Modèle
+- crée un modèle,
+- vérifie que le modèle correspond à la migration,
+- utilise le modèle pour lire des données.
+
+Exercice 03.5 — Factory
+- crée une factory,
+- génère des données,
+- vérifie que les données sont cohérentes.
+
+Exercice 03.6 — Exemple complet
+- crée une table,
+- crée un seeder,
+- crée une factory,
+- remplit la base,
+- vérifie que tout est cohérent.
+
+Exercice 03.7 — Données fiables
+- remplit la base avec des données réalistes,
+- vérifie que les données sont cohérentes,
+- garde un seeder reproductible.
+
+Exercice 03.8 — Questions sans support
+- à quoi sert une migration ?,
+- à quoi sert un seeder ?,
+- quelle différence entre migration et seeder ?,
+- comment remplir la base de manière reproductible ?,
+- comment vérifier qu'une migration est bien appliquée ?.
+
+10. MINI-PROJET DU JOUR
+--------------------------------------------------------------------------------
+Objectif : une base de données alimentée et reproductible.
+
+Ce que tu fais :
+- une migration,
+- un seeder,
+- une factory,
+- un modèle,
+- une base remplie,
+- vérifier la cohérence globale.
+
+Ce qu'il faut valider :
+- tu peux refaire la base de zéro,
+- tu connais le vocabulaire,
+- tu sais organiser une base simple et reproductible.
+
+11. CE QUE TU ÉVITES
+--------------------------------------------------------------------------------
+- copier sans vérifier,
+- créer une migration sans comprendre le schema,
+- remplir la base sans seeder,
+- chercher des tutos au lieu de la doc,
+- tomber sur des tutoriels trop anciens ou pas à jour,
+- confondre migration et seeder.
+
+12. GIT
+--------------------------------------------------------------------------------
+    git add .
+    git commit -m "Jour 3 - migrations, seeders, Eloquent"
+
+13. BILAN ET SUIVI
+--------------------------------------------------------------------------------
+- note ce que tu as fait,
+- note ce que tu as compris,
+- note les difficultés,
+- note les questions pour demain.
+
+================================================================================
+FIN DU JOUR 03
+================================================================================

@@ -1,0 +1,288 @@
+================================================================================
+JOUR 05 — FORMULAIRES, VALIDATION ET TRAITEMENT
+================================================================================
+
+1. OBJECTIF DU JOUR
+--------------------------------------------------------------------------------
+- créer des formulaires sécurisés en Blade,
+- valider les données entrantes,
+- afficher les erreurs,
+- réafficher les valeurs avec old(),
+- gérer un upload basique,
+- bien séparer validation et traitement.
+
+Ce qu'il faut retenir : un formulaire Laravel sans validation n'est pas
+acceptable en production, même dans un projet d'apprentissage.
+
+2. PRÉREQUIS
+--------------------------------------------------------------------------------
+- Jours 1 à 4 faits.
+- Articles ou modèles existants en base.
+- Savoir ce qu'est POST, CSRF, une route, un contrôleur, une vue.
+
+3. MÉTHODES HTTP ET FORMULAIRES
+--------------------------------------------------------------------------------
+Affichage du formulaire de création :
+    GET /articles/create
+
+Soumission de création :
+    POST /articles
+
+Mise à jour :
+    PUT /articles/{article}
+
+Suppression :
+    DELETE /articles/{article}
+
+Pour un PUT ou DELETE depuis un formulaire HTML, Laravel utilise le spoof :
+    <form method="POST" action="{{ route('articles.update', $article) }}">
+        @csrf
+        @method('PUT')
+        ...
+    </form>
+
+Explication courte : HTML ne supporte pas naturellement PUT ou DELETE. Laravel
+simule la méthode avec @method('PUT').
+
+4. CSRF
+--------------------------------------------------------------------------------
+Tout formulaire qui modifie des données doit avoir @csrf. Sinon tu as uneerreur
+de token manquant.
+
+Pourquoi : Laravel protège les soumissions contre les attaques CSRF. Le token
+est vérifié côté serveur.
+
+5. VALIDATION
+--------------------------------------------------------------------------------
+Dans le contrôleur :
+    $validated = $request->validate([
+        'title'   => 'required|string|max:255',
+        'content' => 'required|string',
+        'author'  => 'required|string|max:255',
+    ]);
+
+Ce qu'il faut retenir :
+- validate() arrête tout si ça échoue,
+- les erreurs remontent dans $errors,
+- old() est rempli automatiquement pour certaines valeurs,
+- tu récupères les données sécurisées dans $validated.
+
+Exemple complet :
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'title'   => 'required|string|max:255',
+            'content' => 'required|string',
+            'author'  => 'required|string|max:255',
+        ]);
+
+        Article::create($validated);
+
+        return redirect()->route('articles.index')
+            ->with('success', 'Article créé.');
+    }
+
+Astuce : with() passe un message via session pour l'afficher après le redirect.
+
+6. AFFICHAGE DES ERREURS DANS BLADE
+--------------------------------------------------------------------------------
+Au niveau de la vue :
+    @if ($errors->any())
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
+
+Champ par champ :
+    <input name="title" value="{{ old('title') }}">
+    @error('title')
+        <p class="error">{{ $message }}</p>
+    @enderror
+
+old('title') redonne la valeur saisie si la validation échoue, ce qui évite de
+refaire le formulaire depuis zéro.
+
+7. UPLOADS BASIQUES
+--------------------------------------------------------------------------------
+Formulaire avec multipart :
+    <form method="POST" action="{{ route('articles.store') }}"
+          enctype="multipart/form-data">
+        @csrf
+        <input type="file" name="image">
+        <button type="submit">Créer</button>
+    </form>
+
+Validation :
+    'image' => 'nullable|image|max:2048'
+
+Stockage basique :
+    if ($request->hasFile('image')) {
+        $path = $request->file('image')->store('articles', 'public');
+    }
+
+Si tu exposes le dossier public, lance parfois :
+    php artisan storage:link
+
+Ne jamais stocker un fichier sans le valider.
+
+8. ORGANISATION DU TRAITEMENT
+--------------------------------------------------------------------------------
+Ce qu'il faut faire :
+- valider en premier,
+- traiter ensuite,
+- retourner un redirect ou une réponse claire.
+
+Ce qu'il faut éviter :
+- faire des actions en base avant la validation,
+- mélanger validation et logique métier complexe au même endroit,
+- rediriger ou afficher sans message clair.
+
+Exemple court et lisible :
+    public function store(StoreArticleRequest $request)
+    {
+        $article = Article::create($request->validated());
+
+        return redirect()->route('articles.show', $article);
+    }
+
+Ici la validation est dans StoreArticleRequest, le contrôleur reste court.
+
+9. EXERCICES PRATIQUES
+--------------------------------------------------------------------------------
+Exercice 5.1 — Formulaire de création
+- crée la route GET /articles/create,
+- crée la vue,
+- ajoute un formulaire avec title, content, author,
+- ajoute @csrf,
+- vérifie que la page s'affiche.
+
+Exercice 5.2 — Validation dans le contrôleur
+    $validated = $request->validate([
+        'title'   => 'required|string|max:255',
+        'content' => 'required|string',
+        'author'  => 'required|string|max:255',
+    ]);
+- teste un cas valide,
+- teste un cas invalide,
+- note ce que validate() fait quand ça échoue.
+
+Exercice 5.3 — Affichage des erreurs
+    @if ($errors->any())
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
+- soumet vide ou invalide,
+- vérifie que les erreurs apparaissent.
+
+Exercice 5.4 — old()
+- utilise value="{{ old('title') }}" sur les champs,
+- soumet invalide,
+- vérifie que les valeurs réapparaissent,
+- teste aussi old('key', $fallback) sur une vue edit.
+
+Exercice 5.5 — Formulaire de mise à jour
+- crée l'edit,
+- utilise @method('PUT'),
+- valide,
+- redirige.
+
+Exercice 5.6 — Upload basique
+- ajoute enctype="multipart/form-data",
+- ajoute un champ image,
+    'image' => 'required|image|max:2048',
+- stocke avec store('articles', 'public') si tu veux,
+- teste une image valide, un fichier trop lourd, un fichier pas une image.
+
+Exercice 5.7 — Règles à essayer
+- required / nullable
+- string / numeric / boolean
+- max
+- confirmed
+- email
+- unique / exists
+
+Choisis un formulaire, ajoute au moins 3 règles différentes, et note ce que fait
+chaque règle dans l'exercice, pas dans ta tête.
+
+Exercice 5.8 — Message personnalisé
+- teste le message par défaut,
+- modifie le message,
+- vérifie que le nouveau message s'affiche.
+
+Exercice 5.9 — Message de succès
+    return redirect()->route('articles.index')
+        ->with('success', 'Article créé.');
+Et dans la vue :
+    @if (session('success'))
+        {{ session('success') }}
+    @endif
+
+Exercice 5.10 — Questions sans doc avant
+- À quoi sert @csrf ?
+- Comment faire une mise à jour depuis un formulaire HTML ?
+- À quoi sert old() ?
+- Quelle différence entre required et nullable ?
+- Comment valider un fichier image ?
+
+Exercice 5.11 — Formulaire complet récapitulatif
+Refais un formulaire complet de A à Z :
+- route,
+- CSRF,
+- méthode,
+- validation,
+- erreurs,
+- old(),
+- message de succès.
+
+Seul critère : tu dois pouvoir le refaire sans copier-coller.
+
+10. MINI-PROJET DU JOUR
+--------------------------------------------------------------------------------
+Construis le CRUD basique des articles :
+- formulaire de création,
+- formulaire de modification,
+- validation,
+- erreurs dans Blade,
+- old(),
+- upload optionnel,
+- message de succès.
+
+Bonus : suppression avec confirmation.
+
+11. QUESTIONS DE VÉRIFICATION
+--------------------------------------------------------------------------------
+- Pourquoi @csrf ?
+- Comment faire une mise à jour depuis un formulaire HTML ?
+- À quoi sert old() ?
+- Comment afficher les erreurs ?
+- Comment valider un fichier image ?
+
+12. CE QUE TU ÉVITES
+--------------------------------------------------------------------------------
+- oublier @csrf,
+- oublier old(),
+- valider sans penser aux cas limites,
+- stocker un fichier non validé,
+- faire du métier avant la validation.
+
+13. GIT
+--------------------------------------------------------------------------------
+    git add .
+    git commit -m "Jour 5 - formulaires et validation"
+
+14. CE QUE TU REVISERAS LE LENDEMAIN
+--------------------------------------------------------------------------------
+- CSRF,
+- validation,
+- old(),
+- méthodes HTTP,
+- uploads basiques.
+
+================================================================================
+FIN DU JOUR 05
+================================================================================

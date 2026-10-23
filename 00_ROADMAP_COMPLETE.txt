@@ -1,0 +1,455 @@
+ROADMAP INTENSIF LARAVEL — FORMATION DE 10 JOURS
+
+Formation conçue pour un apprentissage pratique, progressif et évalué.
+Ce document est le point d'entrée. Les fichiers JOUR_01 à JOUR_10 sont les
+fiches de travail réelles. Lisez d'abord ce fichier, puis ouvrez le fichier
+du jour avant de commencer.
+
+1. PRÉSENTATION DE LA FORMATION
+
+Cette formation a pour objectif de vous rendre autonome sur Laravel en 10 jours
+de travail intensif.  L'objectif n'est pas de devenir expert. L'objectif est
+de :
+- comprendre le fonctionnement interne du framework,
+- savoir construire une application web complète,
+- savoir lire la documentation et continuer à progresser seul.
+
+La progression est conçue pour quelqu'un qui :
+- connaît déjà PHP de façon raisonnable (variables, tableaux, fonctions,
+  POO de base, namespaces, Composer, requêtes HTTP),
+- veut apprendre en pratiquant,
+- accepte de faire des exercices, de se tromper, de chercher et de retester.
+
+Si PHP ou la POO vous são inconnus, la formation sera beaucoup plus difficile
+et plus lente. Dans ce cas, repérez les fenêtres "Prérequis PHP" aux jours 1
+et 2 et remplissez-les avant de continuer.
+
+--------------------------------------------------------------------------------
+2. OBJECTIFS
+--------------------------------------------------------------------------------
+
+À l'issue des 10 jours, vous devez être capable de :
+
+1. Créer et configurer un projet Laravel vierge.
+2. Lire et utiliser Artisan pour générer routes, contrôleurs, modèles,
+   migrations, factories, seeders, middlewares et tests.
+3. Comprendre le cycle d'une requête Laravel : entrée HTTP → routing →
+   middleware → contrôleur → modèle/Eloquent → vue/JSON → réponse.
+4. Écrire des routes web et API, avec paramètres, groupes et préfixes.
+5. Construire des contrôleurs simples et des contrôleurs de ressources.
+6. Utiliser Blade : layouts, sections, composants, directives, passage de
+   données, boucles, conditions.
+7. Configurer MySQL et comprendre pourquoi Laravel nécessite la base de
+   données et le PDO.
+8. Écrire des migrations pour créer et modifier des tables.
+9. Utiliser les factories et seeders pour remplir une base de données de
+   données de test.
+10. Comprendre et utiliser Eloquent : modèles, CRUD, scopes, accesseurs,
+    mutateurs, relations 1:1, 1:N, N:N.
+11. Détecter et corriger les problèmes de performances fréquents, notamment
+    le N+1.
+12. Construire des formulaires sécurisés avec CSRF, validation et messages
+    d'erreur.
+13. Gérer les uploads de fichiers de façon basique.
+14. Installer et utiliser un kit de démarrage d'authentification (par exemple
+    Laravel Breeze).
+15. Mettre en place des middlewares, gates et policies.
+16. Concevoir une petite API REST avec validation, API Resources et réponses
+    JSON structurées.
+17. Organiser du code dans des Form Requests, des services simples et des
+    contrôleurs qui ne font pas trop.
+18. Lire et écrire des tests basiques (PHPUnit ou Pest, selon ce qui est
+    disponible dans le projet).
+19. Déboguer avec les logs, la configuration de debug et les outils
+    d'inspection.
+20. Suivre les bonnes pratiques Git sur un projet Laravel.
+21. Construire un projet final qui réutilise la majeure partie des notions
+    précédentes.
+
+--------------------------------------------------------------------------------
+3. PRÉREQUIS
+--------------------------------------------------------------------------------
+
+Prérequis recommandés (minimum) :
+- PHP : syntaxe de base, fonctions, tableaux, POO (classes, objets,
+  visibilité, héritage, interfaces, DI de base), namespaces, Composer,
+  autoloading, gestion des erreurs.
+- HTTP : méthodes GET/POST/PUT/DELETE, codes de statut, requêtes,
+  réponses, cookies, sessions.
+- Bases de données relationnelles : table, colonne, clé primaire, clé
+  étrangère, relation 1:N, jointures, index.
+- Ligne de commande : naviguer dans les dossiers, lancer des commandes,
+  lire un message d'erreur.
+- Git : init, add, commit, status, log, push, pull.
+
+Prérequis fortement recommandés pour réussir les 10 jours :
+- PHP 8.2 ou supérieur.
+- Composer installé et fonctionnel.
+- Une base de données MySQL/MariaDB accessible.
+- Un éditeur ou IDE configuré (VS Code ou PHPStorm recommandés).
+
+Ce qui n'est PAS un prérequis :
+- Connaître Laravel avant de commencer.
+- Savoir utiliser Docker ou Sail (la formation propose une option, mais
+  n'est pas bloquante si MySQL local est disponible).
+- Maîtriser le JavaScript frontend.
+
+--------------------------------------------------------------------------------
+4. DIAGNOSTIC DE VOTRE ENVIRONNEMENT
+--------------------------------------------------------------------------------
+
+Diagnostic automatique exécuté avant la création des fichiers :
+
+PHP :    8.3.33 (CLI) — disponible
+Composer : 2.10.3 — disponible
+Laravel installer : non installé globalement
+Node.js : v26.7.0 — disponible
+npm     : 11.19.0 — disponible
+MySQL (CLI) : introuvable dans le PATH système
+MariaDB : introuvable dans le PATH système
+WampServer : détecté dans C:/wamp64
+Projets Laravel existants dans l'arborescence courante : aucun fichier
+"artisan" trouvé à proximité
+
+Interprétation :
+- PHP 8.3 est une très bonne version pour Laravel 11/12/13.
+- Les extensions PHP suivantes sont déjà actives : bcmath, ctype, fileinfo,
+  json, openssl, pcre, PDO, pdo_mysql, tokenizer. C'est bon signe.
+- Attention : pdo_oci est chargé en boot mais non trouvé. Ce n'est pas un
+  blocage pour Laravel tant que pdo_mysql est présent.
+- MySQL/MariaDB n'est pas dans le PATH. Sous WampServer, l'exécutable MySQL
+  se trouve normalement dans un dossier du type :
+      C:/wamp64/bin/mysql/mysqlX.X.X/
+  ou
+      C:/wamp64/bin/mysql/bin/
+  Vous devrez probablement utiliser ce chemin, ou utiliser le panneau Wamp,
+  ou encore utiliser Laravel Sail si Docker est disponible.
+- Node.js et npm sont disponibles, ce qui est utile pour les assets, même si
+  Laravel 11+ les utilise de façon plus légère qu'auparavant.
+- Aucun projet Laravel existant n'a été détecté dans l'arborescence
+  courante. La formation ne modifiera aucun projet existant.
+
+Recommandation pour ce diagnostic :
+- Choisissez d'abord votre mode de base de données :
+  * Option A : WampServer déjà installé → utiliser le serveur MySQL de Wamp.
+  * Option B : installer/configurer MySQL ou MariaDB séparément.
+  * Option C : utiliser Laravel Sail avec Docker si vous êtes à l'aise avec
+    Docker.
+- Si vous n'avez aucune base de données fonctionnelle, jour 3 sera difficile.
+  Vérifiez que vous pouvez lancer un client MySQL et vous connecter avant
+  de commencer jour 3.
+
+--------------------------------------------------------------------------------
+5. VERSION DE LARAVEL CIBLE
+--------------------------------------------------------------------------------
+
+Le programme est conçu pour Laravel 11 et supérieur.
+
+Pourquoi :
+- Laravel 11 a simplifié la structure du projet (fewer default files,
+  bootstrap/app.php pour le Pipeline d'application et les middlewares).
+- Les concepts pédagogiques visés (routes, contrôleurs, Blade, Eloquent,
+  validation, auth, API, tests) sont stables et transposables sur les
+  versions récentes.
+- Vous devez vérifier la version que vous installez et adapter si une
+  commande ou un fichier diffère.
+
+Vérification à faire avant jour 1 :
+- Installer Laravel (via installer global ou via Composer) et noter la version
+  exacte du projet créé.
+- Si la version diffère de Laravel 11, lisez les release notes de votre
+  version sur https://laravel.com/docs/releases.
+
+--------------------------------------------------------------------------------
+6. MÉTHODE DE TRAVAIL POUR LES 10 JOURS
+--------------------------------------------------------------------------------
+
+Chaque journée suit le même schéma :
+- révision active des jours précédents (10 à 20 min),
+- apprentissage ciblé (documents + vidéos),
+- pratique codée dans un projet réel ou des sketches,
+- exercice de mémorisation,
+- test de compréhension,
+- checklist de validation,
+- bilan.
+
+Règles d'or :
+1. Écrire du code avant de lire trop longtemps.
+2. Essayer seul avant de consulter la solution complète.
+3. Faire une commit Git régulière par journée.
+4. Noter ce qui a posé problème dans 12_SUIVI_PROGRESSIONS.txt.
+5. Ne pas sauter les exercices de rappel actif.
+
+Organisation quotidienne suggérée (modifiable selon votre rythme) :
+
+Version intensive recommandée :
+- matin   : 3h00 (révision 15 min + théorie 45 min + pratique 2h)
+- midi    : pause méridienne d'au moins 30 min
+- après-midi : 3h00 (pratique 2h + consolidation + exercices 1h)
+- soir   : 30 min de flashcards/questions de révision sans notes
+
+Temps total par jour : environ 6h30 de travail ciblé, plus les pauses.
+
+Si 6h30 sont insoutenables, réduisez à 4h00 à 5h00 par jour, mais acceptez
+que certains jours avanceront plus lentement et que le jour 10 sera plus
+serré.
+
+Ne compensez pas une journée manquée en bourrinant le lendemain. Mieux vaut
+repartir du point de contrôle.
+
+--------------------------------------------------------------------------------
+7. RÉPARTITION DU TEMPS SUR 10 JOURS (VOLET PRATIQUE)
+--------------------------------------------------------------------------------
+
+Estimation heure par heure (ordre de grandeur) :
+- révision et rappel actif        : ~5 à 8 % du temps
+- lecture de documentation ciblée : ~15 à 20 %
+- vidéos                          : ~15 à 20 %
+- pratique codée                  : ~45 à 55 %
+- correction, tests, débogage    : ~10 à 15 %
+
+La pratique doit toujours l'emporter sur la lecture et les vidéos.
+
+--------------------------------------------------------------------------------
+8. CE QUE VOUS NE SEEREZ PAS EN 10 JOURS (ET CELA EST NORMAL)
+--------------------------------------------------------------------------------
+
+Notions explicitement hors périmètre ou à approfondir après la formation :
+- Livewire, Inertia, Vue/React avancé, queues/workers, jobs, events,
+  listeners, broadcasting, notifications avancées, packages complexes,
+  architecture en modules, shopping cart e-commerce complet, microservices,
+  déploiement production avancé, scaling, sécurité avancée des APIs,
+  OAuth complexe.
+
+Cela ne veut pas dire que ces sujets sont importants ou non. Cela veut dire
+que 10 jours sont insuffisants pour les aborder sérieusement sans éparpiller
+l'essentiel.
+
+--------------------------------------------------------------------------------
+9. FICHIERS DE LA FORMATION
+--------------------------------------------------------------------------------
+
+00_ROADMAP_COMPLETE.txt            — ce fichier
+JOUR_01.txt  ...  JOUR_10.txt      — fiches de travail quotidiennes
+11_RESSOURCES_LARAVEL.txt          — ressources vérifiées
+12_SUIVI_PROGRESSIONS.txt          — suivi de votre progression
+13_COMMANDES_ARTISAN.txt          — commandes essentielles
+14_REVISION_ET_EVALUATION.txt      — questions, défis, grille d'évaluation
+
+--------------------------------------------------------------------------------
+10. COMMENT UTILISER CE DOSSIER
+--------------------------------------------------------------------------------
+
+Chaque matin :
+1. Ouvrez le fichier JOUR_XX.txt du jour.
+2. Faites d'abord la révision des jours précédents proposée dans le fichier.
+3. Faites les exercices de rappel actif sans regarder vos notes.
+4. Puis suivez le planning horaire.
+
+Chaque soir :
+1. Remplissez 12_SUIVI_PROGRESSIONS.txt.
+2. Notez ce qui vous a bloqué et pourquoi.
+3. Notez les commands/concepts à retester le lendemain.
+
+Pendant la formation :
+- Créez ou utilisez un projet Laravel dédié à l'apprentissage.
+- Faites un commit par jour au minimum.
+- Si vous bloquez plus de 20 à 30 minutes, notez le problème puis passez
+  à autre chose ou demandez de l'aide, mais ne restez pas bloqué en boucle.
+
+--------------------------------------------------------------------------------
+11. MÉTHODE D'ÉVALUATION
+--------------------------------------------------------------------------------
+
+La formation inclut une grille d'évaluation dans
+14_REVISION_ET_EVALUATION.txt.
+
+Deux niveaux de vérification :
+- vérification technique : vous pouvez faire la tâche sans copier-coller
+  aveugle.
+- vérification métier : vous pouvez expliquer pourquoi la tâche existe et
+  quand ne pas l'utiliser.
+
+Les deux sont nécessaires pour être réellement autonome.
+
+--------------------------------------------------------------------------------
+12. DIAGNOSTIC DES CONNAISSANCES PRÉALABLES
+--------------------------------------------------------------------------------
+
+Avant jour 1, répondez honnêtement à ces questions sans chercher :
+
+1. Que fait Composer, notamment le fichier composer.json et l'autoloading ?
+2. Qu'est-ce qu'un namespace PHP et à quoi il sert ?
+3. Qu'est-ce qu'une classe, une instance, une visibilité public/protected ?
+4. Qu'est-ce qu'une interface et une dissociation avec une classe concrète ?
+5. Quelles sont les grandes étapes d'une requête HTTP du navigateur au
+   serveur ?
+6. Qu'est-ce qu'une clé primaire et une clé étrangère ?
+7. Quelle est la différence entre une requête GET et une requête POST ?
+8. Qu'est-ce qu'un token CSRF et pourquoi il existe ?
+9. Avez-vous déjà manipulé une base de données avec des migrations ou des
+   instructions SQL CREATE TABLE ?
+10. Savez-vous exécuter des commandes PHP/Composer depuis la ligne de
+    commande et lire un message d'erreur ?
+
+Si plusieurs réponses vous semblent floues, prévoyez un demi-jour de
+prévention PHP/HTTP/DB pendant la formation et concentrez-vous sur la
+compréhension, pas sur la vitesse.
+
+--------------------------------------------------------------------------------
+13. CONSEILS ESSENTIELS
+--------------------------------------------------------------------------------
+
+1. Installez d'abord une base de données fonctionnelle.
+   Sans MySQL accessible, les jours 3 à 7 sont fortement handicapés.
+   Vérifiez avant jour 1.
+
+2. Téléchargez le projet Laravel dans un dossier dédié et propre.
+   Ne mélangez pas formation et autres projets.
+
+3. Utilisez Artisan dès que possible.
+   php artisan make:... est fait pour cela.
+
+4. Les erreurs sont attendues, même les erreurs de syntaxe.
+   Lisez le message, regardez le nom du fichier, regardez la ligne,
+   ne paniquez pas.
+
+5. Lisez les logs.
+   storage/logs/laravel.log est souvent la première source de vérité.
+
+6. Activez le mode debug en local.
+   Dans .env : APP_DEBUG=true pendant le développement uniquement.
+   Ne jamais pusher ce réglage en production.
+
+7. Apprenez à lire la documentation officielle.
+   Elle est meilleure que la plupart des tutoriels.
+
+8. Ne surchargez pas le contrôleur.
+   Si le contrôleur devient long, réfléchissez à séparer la logique
+   métier dans un service ou dans un Form Request.
+
+9. Eloquent est pratique mais pas magique.
+   Vérifiez les requêtes SQL pendant l'apprentissage.
+
+10. Méfiez-vous du N+1.
+    Il est fréquent, tôt, et il rend les pages lentes sans message d'erreur
+    explicite.
+
+11. Créez une branche Git par jour de formation.
+    Cela vous donne des sauvegardes propres et facilite les retours en arrière.
+
+12. Ne copiez pas des solutions sans comprendre la moitié des lignes.
+    En cas de doute, expliquez chaque ligne à voix haute.
+
+--------------------------------------------------------------------------------
+14. RESSOURCES GÉNÉRALES
+--------------------------------------------------------------------------------
+
+Voir 11_RESSOURCES_LARAVEL.txt pour la liste complète et vérifiée.
+
+En résumé, les ressources les plus importantes pour les 10 jours :
+- Documentation officielle Laravel :
+    https://laravel.com/docs
+  (section 11.x ou votre version installée).
+- Laravel Bootcamp officiel :
+    https://laravel.com/learn
+- Laracasts — "30 Days to Learn Laravel" :
+    https://laracasts.com/series/30-days-to-learn-laravel-11
+- Laracasts — "Laravel From Scratch (2026 Edition)" :
+    https://laracasts.com/series/laravel-from-scratch-2026
+- Laravel News Podcast :
+    https://podcast.laravel-news.com
+- Laravel Daily (bonnes pratiques, pièges, validations) :
+    https://laraveldaily.com
+
+À privilégier pour comprendre les pièges et les bonnes pratiques :
+- Laravel Daily — "17+ Laravel Bad Practices You Should Avoid" :
+    https://laraveldaily.com/post/laravel-bad-practices-avoid
+- Article "Common Mistakes Laravel Developers Make" :
+    https://dev.to/addwebsolutionpvtltd/common-mistakes-laravel-developers-make-and-how-to-avoid-them-3oem
+
+Outils utiles :
+- Laravel Debugbar : https://laraveldebugbar.com/installation/
+- Laravel Telescope : https://laravel.com/docs/telescope
+- Tests : https://laravel.com/docs/testing
+
+--------------------------------------------------------------------------------
+15. PLANNING DES 10 JOURS (SYNOPSIS)
+--------------------------------------------------------------------------------
+
+Jour 1 — Comprendre Laravel et préparer l'environnement
+  Objectif : comprendre ce que fait Laravel, son architecture MVC,
+  configurer un projet, créer route + contrôleur + vue basique.
+
+Jour 2 — Routes, contrôleurs et vues
+  Objectif : maîtriser le routing, les contrôleurs, Blade, les layouts,
+  les composants et le passage de données.
+
+Jour 3 — Bases de données, migrations et remplissage
+  Objectif : configurer MySQL, écrire des migrations, utiliser factories
+  et seeders, comprendre le rôle d'Eloquent.
+
+Jour 4 — Eloquent ORM et relations
+  Objectif : modèles, CRUD, 1:1, 1:N, N:N, requêtes avancées,
+  pagination, N+1.
+
+Jour 5 — Formulaires et validation
+  Objectif : formulaires Blade, méthodes HTTP, CSRF, validation,
+  messages d'erreur, uploads basiques.
+
+Jour 6 — Authentification et sécurité
+  Objectif : auth avec Breeze, middleware, gates, policies, protection
+  des données, bonnes pratiques.
+
+Jour 7 — API REST avec Laravel
+  Objectif : routes API, contrôleurs API, JSON, validation API,
+  API Resources, Sanctum, gestion des erreurs.
+
+Jour 8 — Architecture et bonnes pratiques professionnelles
+  Objectif : Form Requests, services simples, injection de dépendances,
+  exceptions, configuration, .env, Git.
+
+Jour 9 — Tests, débogage et amélioration
+  Objectif : tests basiques, débogage, logs, optimisations de requêtes,
+  révision des notions difficiles.
+
+Jour 10 — Projet final Laravel
+  Objectif : construire une application complète réutilisant les notions
+  précédentes.
+
+--------------------------------------------------------------------------------
+16. COMPÉTENCES FINALES ATTENDUES
+--------------------------------------------------------------------------------
+
+À l'issue des 10 jours, vous ne serez pas un expert. Vous serez capable de :
+- créer et configurer un projet Laravel,
+- lire la documentation officielle pour comprendre une fonctionnalité,
+- construire une application web complète avec auth, relations, validation,
+  API basique et tests élémentaires,
+- déboguer les problèmes classiques,
+- continuer à progresser seul avec des exercices et de la documentation.
+
+Ce qui est réaliste :
+- autonomie sur de petites et moyennes applications Laravel,
+- capacité à comprendre une codebase existante,
+- capacité à apprendre les fonctionnalités avancées en fonction des besoins.
+
+Ce qui n'est pas réaliste en 10 jours :
+- maîtrise de l'écosystème complet,
+- expérience professionnelle réelle,
+- capacité à débattre des décisions d'architecture avancée sur un gros
+  projet sans encadrement.
+
+--------------------------------------------------------------------------------
+17. DERNIÈRE REMARQUE
+--------------------------------------------------------------------------------
+
+Ce programme est progressif, exigeant et orienté pratique. Il ne promet pas
+la maîtrise en 10 jours. Il maximise votre niveau réel si vous travaillez
+avec sérieux, ne sautez pas les exercices et corrigez vos erreurs.
+
+Si vous bloquez longtemps sur un point, ne supposez pas que vous êtes "mauvais
+en programmation". Supposez que vous avez un diagnostic à préciser, un
+document à relire, ou une démonstration à reproduire ligne par ligne.
+
+Lancez le jour 1 dès que votre environnement de base de données est prêt.

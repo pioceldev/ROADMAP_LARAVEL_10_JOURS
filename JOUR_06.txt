@@ -1,0 +1,174 @@
+================================================================================
+JOUR 06 — AUTHENTIFICATION, MIDDLEWARE, GATES, POLICIES
+================================================================================
+
+1. OBJECTIF DU JOUR
+--------------------------------------------------------------------------------
+- installer la gestion de l'authentification,
+- comprendre le middleware et le cycle des middlewares,
+- utiliser les gates et les policies pour autoriser les actions,
+- sécuriser les pages et les actions,
+- verifier que l'utilisateur est bien celui qu'on attend,
+- comprendre ce qui est automatique et ce qui est manuel dans Laravel.
+
+Ce qu'il faut retenir : l'authentification ne suffit pas pour sécuriser une
+application. Il faut contrôler l'accès aux routes, vérifier les permissions dans
+les contrôleurs et les vues, et bien comprendre la différence entre authentification
+et autorisation.
+
+2. OBJECTIFS PRÉCIS
+--------------------------------------------------------------------------------
+- installer Breeze ou un starter kit,
+- créer des middlewares personnalisés,
+- utiliser les gates pour autoriser des actions,
+- utiliser les policies pour sécuriser les modèles,
+- protéger les routes et les contrôleurs,
+- vérifier l'accès dans les vues,
+- expliquer la différence entre middleware, gate et policy.
+
+3. PRÉREQUIS
+--------------------------------------------------------------------------------
+- Jours 1 à 5 faits,
+- un projet Laravel,
+- une base de données active,
+- savoir utiliser php artisan et les routes,
+- savoir lire les erreurs d'authentification ou de permission.
+
+4. PLANNING (version directe)
+--------------------------------------------------------------------------------
+Matin — 3h
+- 30 min : révision active des jours 1-5,
+- 45 min : Breeze / auth basique,
+- 45 min : middleware et cycle de vie,
+- 45 min : gates et policies,
+- 15 min : correction.
+
+Pause méridienne — au moins 30 min.
+
+Après-midi — 3h
+- 30 min : exercices d'identification des erreurs fréquentes,
+- 30 min : exercices d'application dans un projet existant,
+- 60 min : mini-projet du jour,
+- 30 min : lecture ciblée de la documentation,
+- 30 min : bilan, commit, suivi.
+
+Soir — 30 min
+- rappel sans notes : auth, middleware, gate, policy.
+
+5. CE QUE TU DOIS COMPRENDRE AVANT DE CODER
+--------------------------------------------------------------------------------
+- une route middleware est exécutée avant le contrôleur,
+- un gate décide si une action est autorisée,
+- une policy décide si un utilisateur peut faire une action sur une ressource,
+- un middleware peut bloquer une requête,
+- Breeze ne fait pas tout pour toi : il te donne un point de départ, pas la
+  sécurité complète de ton application,
+- différence entre auth et permissions : auth = "qui es-tu", permissions = "que
+  peux-tu faire".
+
+6. NOTIONS CLÉS (directes)
+--------------------------------------------------------------------------------
+- routes protégées,
+- controllers avec auth ou middleware,
+- Breeze comme point de départ,
+- gates pour des décisions simples,
+- policies pour des autorisations liées à une ressource,
+- vérification de l'utilisateur connecté,
+- autorisation dans les vues et les contrôleurs,
+- vérifications avant d'agir sur une ressource.
+
+7. RESSOURCES OFFICIELLES À PRIORITÉ
+--------------------------------------------------------------------------------
+- https://laravel.com/docs/authentication
+- https://laravel.com/docs/middleware
+- https://laravel.com/docs/authorization
+- https://laravel.com/docs/policies
+- https://laravel.com/docs/routing#route-middleware
+
+8. EXERCICES PRATIQUES
+--------------------------------------------------------------------------------
+Exercice 6.1 — Installation du starter kit
+- installe Breeze ou équivalent,
+- vérifie que l'auth fonctionne,
+- crée un utilisateur,
+- teste la connexion, la déconnexion, la page protégée.
+
+Exercice 6.2 — Middleware personnalisé
+- crée un middleware simple,
+- applique le middleware à une route,
+- vérifie que le middleware bloque ou passe la requête.
+
+Exercice 6.3 — Route protégée
+- protège une route par auth,
+- vérifie que l'accès est refusé sans connexion,
+- vérifie que l'accès est autorisé avec connexion.
+
+Exercice 6.4 — Gate
+- crée un gate simple,
+- utilise le gate dans un contrôleur ou une vue,
+- vérifie que la décision est bien appliquée.
+
+Exercice 6.5 — Policy
+- crée une policy pour un modèle,
+- génère les méthodes de base,
+- utilise la policy dans un contrôleur,
+- vérifie que l'autorisation est respectée.
+
+Exercice 6.6 — Autorisation dans la vue
+- vérifie si l'utilisateur a le droit d'éditer,
+- affiche ou masque des éléments en conséquence,
+- vérifie que le rendu correspond aux permissions.
+
+Exercice 6.7 — Cas concret dans le projet
+- protège une ressource,
+- vérifie que seuls les utilisateurs autorisés peuvent agir,
+- teste avec plusieurs comptes si possible.
+
+Exercice 6.8 — Questions sans support
+- quelle différence entre auth et authorization ?,
+- à quoi sert un middleware ?,
+- à quoi sert une policy ?,
+- comment protéger une route ?,
+- comment autoriser une action dans un contrôleur ?.
+
+9. MINI-PROJET DU JOUR
+--------------------------------------------------------------------------------
+Objectif : une partie protégée du projet avec permissions claires.
+
+Ce que tu fais :
+- une route protégée,
+- un gate ou une policy,
+- une verification dans le contrôleur,
+- une verification dans la vue,
+- un test manuel simple,
+- vérifier la cohérence globale.
+
+Ce qu'il faut valider :
+- tu peux refaire le système de permissions de zéro,
+- tu connais le vocabulaire,
+- tu sais organiser la sécurité d'une ressource simple.
+
+10. CE QUE TU ÉVITES
+--------------------------------------------------------------------------------
+- croire que Breeze suffit pour sécuriser tout le projet,
+- mettre la logique de permissions dans une vue sans contrôle dans le contrôleur,
+- mélanger authentification et autorisation,
+- créer des middlewares inutiles ou trop génériques,
+- chercher des tutos au lieu de la doc,
+- tomber sur des tutoriels trop anciens ou pas à jour.
+
+11. GIT
+--------------------------------------------------------------------------------
+    git add .
+    git commit -m "Jour 6 - auth, middleware, gates, policies"
+
+12. BILAN ET SUIVI
+--------------------------------------------------------------------------------
+- note ce que tu as fait,
+- note ce que tu as compris,
+- note les difficultés,
+- note les questions pour demain.
+
+================================================================================
+FIN DU JOUR 06
+================================================================================

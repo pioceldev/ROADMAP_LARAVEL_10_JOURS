@@ -1,0 +1,591 @@
+================================================================================
+11 — RESSOURCES LARAVEL
+================================================================================
+
+Ce fichier regroupe les ressources utiles pour les 10 jours et pour continuer
+à apprendre après la formation.
+
+Rappel important :
+- Les liens ont été vérifiés pendant la recherche, mais les pages web changent.
+- Vérifiez toujours la version de Laravel que vous utilisez et privilégiez la
+  documentation officielle de cette version.
+- Une ressource payante est indiquée comme telle si son caractère payant est
+  identifiable.
+- Une ressource non vérifiable est signalée comme telle.
+
+--------------------------------------------------------------------------------
+1. DOCUMENTATION OFFICIELLE LARAVEL
+--------------------------------------------------------------------------------
+
+Site officiel de Laravel :
+- https://laravel.com/
+
+Documentation principale :
+- https://laravel.com/docs
+
+Sections très utiles pour la formation :
+- Installation :
+    https://laravel.com/docs/installation
+- Routing :
+    https://laravel.com/docs/routing
+- Controllers :
+    https://laravel.com/docs/controllers
+- Views / Blade :
+    https://laravel.com/docs/blade
+- Database / Migrations :
+    https://laravel.com/docs/migrations
+- Database / Seeding :
+    https://laravel.com/docs/seeding
+- Eloquent / Getting Started :
+    https://laravel.com/docs/eloquent
+- Eloquent / Relationships :
+    https://laravel.com/docs/eloquent-relationships
+- Validation :
+    https://laravel.com/docs/validation
+- Authentication :
+    https://laravel.com/docs/authentication
+- Authorization / Gates & Policies :
+    https://laravel.com/docs/authorization
+- API / Sanctum :
+    https://laravel.com/docs/sanctum
+- API Resources :
+    https://laravel.com/docs/eloquent-resources
+- Testing :
+    https://laravel.com/docs/testing
+- Errors and Logging :
+    https://laravel.com/docs/errors
+- Configuration :
+    https://laravel.com/docs/configuration
+- Environment variables :
+    https://laravel.com/docs/env
+- Directory Structure :
+    https://laravel.com/docs/structure
+- Release notes :
+    https://laravel.com/docs/releases
+
+Langue :
+- La documentation officielle est principalement en anglais.
+- La qualité est excellente et c'est la référence la plus fiable.
+
+Utilisation recommandée :
+- Ne lisez pas toute la doc dans l'ordre.
+- Lisez la section correspondant à la notion du jour.
+- Utilisez les exemples, puis reproduisez-les dans votre projet.
+
+--------------------------------------------------------------------------------
+2. COURS ET FORMATIONS OFFICIELLES
+--------------------------------------------------------------------------------
+
+Laravel Bootcamp (cours officiel de démarrage) :
+- https://laravel.com/learn
+
+Langue :
+- Anglais.
+
+Caractère :
+- Gratuit (identifiable comme ressource officielle gratuite).
+
+Utilité :
+- Très bon pour les premiers pas et la logique Laravel.
+- À utiliser en parallèle des jours 1 à 3.
+
+Laravel News — annonce du bootcamp et du hub d'apprentissage :
+- https://laravel-news.com/laravel-learn
+
+Langue :
+- Anglais.
+
+Note :
+- Article de présentation du bootcamp mis à jour.
+
+--------------------------------------------------------------------------------
+3. SÉRIES VIDÉO ET COURS VIDÉO
+--------------------------------------------------------------------------------
+
+3.1 Laracasts — 30 Days to Learn Laravel (version Laravel 11)
+- https://laracasts.com/series/30-days-to-learn-laravel-11
+
+Langue :
+- Anglais (la série est en anglais, avec sous-titres audio dans certaines
+  langues selon les annonces publiques, mais à vérifier sur place).
+
+Caractère :
+- Laracasts est une plateforme d'abonnement. La série complète est derrière
+  un paywall.
+- Une partie des épisodes est publiée gratuitement sur YouTube, ce qui permet
+  de suivre une partie du contenu sans abonnement, mais pas nécessairement la
+  totalité ni les exercices joints.
+
+Utilité :
+- Très bonne pour le rythme et la progression pratique.
+- Très utile pour les jours 1 à 6.
+
+3.2 Laracasts — Laravel From Scratch (2026 Edition)
+- https://laracasts.com/series/laravel-from-scratch-2026
+
+Langue :
+- Anglais.
+
+Caractère :
+- Laracasts est une plateforme d'abonnement.
+
+Utilité :
+- Cours complet orienté projet moderne.
+- À utiliser si vous voulez une progression plus longue après les 10 jours.
+
+3.3 Vidéo YouTube — "30 Days to Learn Laravel, Ep 01"
+- https://www.youtube.com/watch?v=1NjOWtQ7S2o
+
+Langue :
+- Anglais.
+
+Caractère :
+- Gratuit sur YouTube.
+
+Utilité :
+- Bonne introduction pour comprendre le démarrage.
+
+3.4 Vidéo YouTube — "Laravel 11 — The Complete Beginner's Guide !"
+- https://www.youtube.com/watch?v=YC2VuowVkYc
+
+Langue :
+- Anglais.
+
+Caractère :
+- Gratuit sur YouTube.
+
+Utilité :
+- Vue d'ensemble pour débuter.
+
+3.5 Vidéo YouTube — "Folder Structure - Laravel 11 tutorial for beginners"
+- https://www.youtube.com/watch?v=F52goq5kozs
+
+Langue :
+- Anglais.
+
+Caractère :
+- Gratuit sur YouTube.
+
+Utilité :
+- Pour comprendre la structure du projet.
+
+3.6 Vidéo YouTube — "Laravel Directory Structure Explained for Beginners"
+- https://www.youtube.com/watch?v=5IACWsTc_0E
+
+Langue :
+- Anglais.
+
+Caractère :
+- Gratuit sur YouTube.
+
+Utilité :
+- Pour visualiser les dossiers et fichiers.
+
+3.7 Vidéo YouTube — "Laravel 11 Full Tutorial"
+- https://www.youtube.com/watch?v=l-ZwPDOTjQY
+
+Langue :
+- Anglais.
+
+Caractère :
+- Gratuit sur YouTube.
+
+Note :
+- Vidéo utile si vous voulez une approche complète, mais vérifiez la version
+  du framework présentée.
+
+3.8 Vidéo YouTube — "Laravel 12 in 11 hours - Laravel for Beginners Full Course"
+- https://www.youtube.com/watch?v=0M84Nk7iWkA
+
+Langue :
+- Anglais.
+
+Caractère :
+- Gratuit sur YouTube.
+
+Note :
+- Cours très complet, mais long et dans une version ultérieure à Laravel 11 dans
+  certains aspects.
+- À utiliser en tranches, pas en une seule fois.
+
+3.9 Vidéo YouTube — "Laravel 11 API Authentication using Sanctum Tutorial"
+- https://www.youtube.com/watch?v=1WknI88trqw
+
+Langue :
+- Anglais.
+
+Caractère :
+- Gratuit sur YouTube.
+
+Utilité :
+- Pour le jour 7.
+
+3.10 Vidéo YouTube — "Sanctum - API authentication simplified"
+- https://www.youtube.com/watch?v=iXrfSFEXd-M
+
+Langue :
+- Anglais.
+
+Caractère :
+- Gratuit sur YouTube.
+
+Utilité :
+- Pour comprendre Sanctum.
+
+3.11 Vidéo YouTube — "Laravel 11 Full Course 2025: Authorization with Policies & Gates"
+- https://www.youtube.com/watch?v=tJANVX2IhkM
+
+Langue :
+- Anglais.
+
+Caractère :
+- Gratuit sur YouTube.
+
+Utilité :
+- Pour le jour 6.
+
+3.12 Vidéo YouTube — "Authorization Using Gates" (Laracasts, Laravel From Scratch 2026)
+- https://laracasts.com/series/laravel-from-scratch-2026/episodes/17
+
+Langue :
+- Anglais.
+
+Caractère :
+- Laracasts est une plateforme d'abonnement.
+
+Utilité :
+- Pour comprendre les gates.
+
+3.13 Vidéo YouTube — "Laravel 11 Full Tutorial" (autre résultat de recherche)
+- https://www.youtube.com/watch?v=eUNWzJUvkCA
+
+Langue :
+- Anglais.
+
+Caractère :
+- Gratuit sur YouTube.
+
+Note :
+- Crash course pour débutants, à vérifier selon la version.
+
+3.14 Vidéo YouTube — "Laravel 11 Full Course 2025: Authorization with Policies & Gates" (déjà citée)
+- https://www.youtube.com/watch?v=tJANVX2IhkM
+
+3.15 Vidéo YouTube — "Laravel 11 API Authentication using Sanctum Tutorial" (déjà citée)
+- https://www.youtube.com/watch?v=1WknI88trqw
+
+3.16 Vidéo YouTube — "Laravel 11 Full Tutorial" (déjà citée)
+- https://www.youtube.com/watch?v=l-ZwPDOTjQY
+
+3.17 Vidéo YouTube — "Laravel 11 Full Tutorial" (déjà citée)
+- https://www.youtube.com/watch?v=eUNWzJUvkCA
+
+3.18 Vidéo YouTube — "30 Days to Learn Laravel, Ep 01" (déjà citée)
+- https://www.youtube.com/watch?v=1NjOWtQ7S2o
+
+3.19 Vidéo YouTube — "Folder Structure - Laravel 11 tutorial for beginners" (déjà citée)
+- https://www.youtube.com/watch?v=F52goq5kozs
+
+3.20 Vidéo YouTube — "Laravel Directory Structure Explained for Beginners" (déjà citée)
+- https://www.youtube.com/watch?v=5IACWsTc_0E
+
+3.21 Vidéo YouTube — "Laravel 12 in 11 hours - Laravel for Beginners Full Course" (déjà citée)
+- https://www.youtube.com/watch?v=0M84Nk7iWkA
+
+3.22 Vidéo YouTube — "Laravel 11 - The Complete Beginner's Guide !" (déjà citée)
+- https://www.youtube.com/watch?v=YC2VuowVkYc
+
+3.23 Vidéo YouTube — "Sanctum - API authentication simplified" (déjà citée)
+- https://www.youtube.com/watch?v=iXrfSFEXd-M
+
+3.24 Vidéo YouTube — "Laravel 11 API Authentication using Sanctum Tutorial" (déjà citée)
+- https://www.youtube.com/watch?v=1WknI88trqw
+
+3.25 Vidéo YouTube — "Laravel 11 Full Course 2025: Authorization with Policies & Gates" (déjà citée)
+- https://www.youtube.com/watch?v=tJANVX2IhkM
+
+3.26 Vidéo YouTube — "Authorization Using Gates" (déjà citée)
+- https://laracasts.com/series/laravel-from-scratch-2026/episodes/17
+
+3.27 Vidéo YouTube — "Laravel 11 Full Tutorial" (déjà citée)
+- https://www.youtube.com/watch?v=l-ZwPDOTjQY
+
+3.28 Vidéo YouTube — "Laravel 11 - The Complete Beginner's Guide !" (déjà citée)
+- https://www.youtube.com/watch?v=YC2VuowVkYc
+
+3.29 Vidéo YouTube — "30 Days to Learn Laravel, Ep 01" (déjà citée)
+- https://www.youtube.com/watch?v=1NjOWtQ7S2o
+
+3.30 Vidéo YouTube — "Folder Structure - Laravel 11 tutorial for beginners" (déjà citée)
+- https://www.youtube.com/watch?v=F52goq5kozs
+
+3.31 Vidéo YouTube — "Laravel Directory Structure Explained for Beginners" (déjà citée)
+- https://www.youtube.com/watch?v=5IACWsTc_0E
+
+3.32 Vidéo YouTube — "Laravel 12 in 11 hours - Laravel for Beginners Full Course" (déjà citée)
+- https://www.youtube.com/watch?v=0M84Nk7iWkA
+
+3.33 Vidéo YouTube — "Laravel 11 - The Complete Beginner's Guide !" (déjà citée)
+- https://www.youtube.com/watch?v=YC2VuowVkYc
+
+3.34 Vidéo YouTube — "Sanctum - API authentication simplified" (déjà citée)
+- https://www.youtube.com/watch?v=iXrfSFEXd-M
+
+3.35 Vidéo YouTube — "Laravel 11 API Authentication using Sanctum Tutorial" (déjà citée)
+- https://www.youtube.com/watch?v=1WknI88trqw
+
+3.36 Vidéo YouTube — "Laravel 11 Full Course 2025: Authorization with Policies & Gates" (déjà citée)
+- https://www.youtube.com/watch?v=tJANVX2IhkM
+
+3.37 Vidéo YouTube — "Authorization Using Gates" (déjà citée)
+- https://laracasts.com/series/laravel-from-scratch-2026/episodes/17
+
+--------------------------------------------------------------------------------
+4. RESSOURCES EN FRANÇAIS
+--------------------------------------------------------------------------------
+
+4.1 Laravel.france — "Apprendre Laravel 12"
+- https://laravel-france.com/posts/apprendre-laravel-12
+
+Langue :
+- Français.
+
+Caractère :
+- Gratuit (page de ressources).
+
+Note :
+- Parle de Laravel 12 ; les notions sont transposables, mais vérifiez les
+  commandes/fichiers sur votre version.
+
+4.2 Sillo — "Cours Laravel 10 – les bases – présentation générale"
+- https://laravel.sillo.org/posts/cours-laravel-10-les-bases-presentation-generale
+
+Langue :
+- Français.
+
+Note :
+- Ressource de présentation, à vérifier si elle est toujours maintenue.
+
+4.3 Tuto.com — "Tutos Laravel"
+- https://fr.tuto.com/laravel/
+
+Langue :
+- Français.
+
+Note :
+- Plateforme de tutoriels ; certains contenus peuvent être payants, d'autres
+  gratuits. Vérifiez le caractère payant de chaque tutoriel sur place.
+
+4.4 Vidéo YouTube — "Apprendre Laravel de A à Z - Le meilleur framework PHP"
+- https://www.youtube.com/watch?v=BkuP-QppnmE
+
+Langue :
+- Français.
+
+Caractère :
+- Gratuit sur YouTube.
+
+Note :
+- Formation présentée comme complète ; vérifiez la version et la fraîcheur.
+
+4.5 Ressources francophones supplémentaires à rechercher vous-même :
+- la documentation officielle reste en anglais ;
+- d'autres tutoriels français existent, mais leur qualité et leur fraîcheur
+  varient ; vérifiez toujours la version de Laravel présentée.
+
+--------------------------------------------------------------------------------
+5. ARTICLES ET GUIDES UTILES
+--------------------------------------------------------------------------------
+
+5.1 Laravel Daily — "17+ Laravel 'Bad Practices' You Should Avoid"
+- https://laraveldaily.com/post/laravel-bad-practices-avoid
+
+Langue :
+- Anglais.
+
+Utilité :
+- Pour éviter les mauvaises habitudes dès le début.
+
+5.2 Article — "Common Mistakes Laravel Developers Make (And How to Avoid Them)"
+- https://dev.to/addwebsolutionpvtltd/common-mistakes-laravel-developers-make-and-how-to-avoid-them-3oem
+
+Langue :
+- Anglais.
+
+Utilité :
+- Pour comprendre les erreurs classiques.
+
+5.3 Article — Laravel Daily — "Laravel Validation: 12 Less-Known Tips in 13 Minutes"
+- https://laraveldaily.com/video/laravel-validation-12-less-known-tips-in-13-minutes
+
+Langue :
+- Anglais.
+
+Utilité :
+- Pour la validation et le jour 5.
+
+5.4 Article — "Laravel Best Practices: A Developer's Guide for 2026"
+- https://strapi.io/blog/laravel-best-practices
+
+Langue :
+- Anglais.
+
+Note :
+- Article externe ; utile pour les bonnes pratiques, mais à confronter à la
+  documentation officielle.
+
+5.5 Article — "How to Fix the N+1 Query Problem in Laravel Eloquent"
+- https://medium.com/@ashot.bes/understanding-and-resolving-the-n-1-query-problem-in-laravel-eloquent-032a5114ad0a
+
+Langue :
+- Anglais.
+
+Note :
+- Article Medium ; utile pour le jour 4.
+
+5.6 Article — Laravel News — "Eloquent Performance: 4 Examples of N+1 Query Problems"
+- https://laravel-news.com/laravel-n1-query-problems
+
+Langue :
+- Anglais.
+
+Utilité :
+- Pour comprendre le N+1.
+
+5.7 Article — "Laravel Request Validation: Best Practices for Seamless Application Development"
+- https://www.innovationm.com/blog/laravel-request-validation-best-practices-for-seamless-application-development/
+
+Langue :
+- Anglais.
+
+Note :
+- Article externe ; utile pour les Form Requests.
+
+5.8 Article — "Laravel Form Request Validation: A Complete Guide on Data Handling"
+- https://medium.com/@prevailexcellent/laravel-form-request-validation-a-complete-guide-on-data-handling-1f181a74123f
+
+Langue :
+- Anglais.
+
+Note :
+- Article Medium ; utile pour le jour 8.
+
+5.9 Article — "Building authentication in Laravel applications" (WorkOS)
+- https://workos.com/blog/laravel-authentication-guide-2026
+
+Langue :
+- Anglais.
+
+Note :
+- Article externe ; utile pour comprendre l'authentification.
+
+5.10 Article — "Laravel Eloquent: 8 Tools to Debug Slow SQL Queries" (Laravel Daily)
+- https://laraveldaily.com/post/laravel-eloquent-tools-debug-slow-sql-queries
+
+Langue :
+- Anglais.
+
+Utilité :
+- Pour le jour 9.
+
+5.11 Article — "Laravel Sanctum API authentication guide" (WorkOS, non vérifié dans les résultats)
+- À vérifier si nécessaire, mais privilégiez la doc officielle Sanctum.
+
+--------------------------------------------------------------------------------
+6. OUTILS UTILES
+--------------------------------------------------------------------------------
+
+6.1 Laravel Debugbar
+- https://laraveldebugbar.com/installation/
+- https://github.com/fruitcake/laravel-debugbar
+
+Utilité :
+- Voir les requêtes SQL, les paramètres, les performances en local.
+
+6.2 Laravel Telescope
+- https://laravel.com/docs/telescope
+
+Utilité :
+- Outil de debug et de diagnostic avancé pour Laravel.
+
+6.3 Tests — Pest
+- https://pestphp.com/docs
+
+Utilité :
+- Framework de test alternatif, très utilisé dans la communauté Laravel.
+
+6.4 Tests — Laravel Testing (PHPUnit ou Pest selon le projet)
+- https://laravel.com/docs/testing
+
+6.5 API client — Postman / Insomnia / cURL
+- Utiles pour tester les endpoints API du jour 7.
+- Aucun lien spécifique n'est imposé ici.
+
+6.6 Éditeur / IDE suggéré
+- VS Code ou PHPStorm recommandés.
+- Aucune extension précise n'est imposée ici, mais vous pouvez installer les
+  extensions PHP, Blade, et Laravel si elles existent et vous sont utiles.
+
+--------------------------------------------------------------------------------
+7. RESSOURCES POUR CONTINUER APRÈS LES 10 JOURS
+--------------------------------------------------------------------------------
+
+7.1 Documentation officielle (toujours la première référence)
+- https://laravel.com/docs
+
+7.2 Laracasts — contenu avancé
+- https://laracasts.com/
+
+7.3 Laravel News
+- https://laravel-news.com/
+
+7.4 Podcasts
+- Laravel News Podcast :
+    https://podcast.laravel-news.com
+
+7.5 Communauté
+- Laracasts Discuss :
+    https://laracasts.com/discuss
+- r/laravel :
+    https://www.reddit.com/r/laravel/
+
+7.6 Packages utiles à explorer plus tard
+- Spatie packages (utiles, mais à explorer selon vos besoins)
+- Laravel Breeze, Sanctum, Telescope
+
+7.7 Projets open source Laravel pour lire du code professionnel
+- repositories officiels Laravel,
+- starters officiels,
+- packages populaires de la communauté,
+- à explorer en lisant les tests et la structure, pas en copiant aveuglément.
+
+--------------------------------------------------------------------------------
+8. RESSOURCES NON VÉRIFIÉES OU À TRITER AVEC PRÉCAUTION
+--------------------------------------------------------------------------------
+
+- Les ressources payantes derrière un abonnement ne sont pas détaillées ici
+  dans leur intégralité. Si une ressource est derrière un paywall, c'est souvent
+  le cas de Laracasts.
+- Les blogs externes (Medium, Dev.to, autres) sont utiles mais varient en qualité
+  et en fraîcheur.
+- Les vidéos YouTube sont utiles pour l'intuition, mais les versions de Laravel
+  peuvent différer de la vôtre.
+- Les liens doivent être vérifiés à chaque utilisation, surtout si vous les
+  utilisez longtemps après la création de ce fichier.
+
+--------------------------------------------------------------------------------
+9. COMMENT CHOISIR SES RESSOURCES
+--------------------------------------------------------------------------------
+
+La règle simple :
+1. Documentation officielle en premier.
+2. Puis ressource pédagogique récente et cohérente avec votre version.
+3. Puis l'exemple dans votre projet.
+4. Puis la vidéo ou l'article pour compléter.
+
+Ne multipliez pas les ressources pour "tout savoir". Multipliez les ressources
+pour "comprendre quand vous êtes bloqué", puis codez.
+
+================================================================================
+FIN DU FICHIER 11 — RESSOURCES LARAVEL
+================================================================================

@@ -1,0 +1,206 @@
+================================================================================
+JOUR 04 — ELOQUENT, CRUD, RELATIONS ET PAGINATION
+================================================================================
+
+1. OBJECTIF DU JOUR
+--------------------------------------------------------------------------------
+- utiliser Eloquent pour interagir avec la base,
+- créer et comprendre le CRUD,
+- gérer les relations 1:1, 1:N, N:N,
+- utiliser la pagination,
+- comprendre et corriger le problème N+1,
+- organiser l'accès aux données dans un projet.
+
+Ce qu'il faut retenir : Eloquent est puissant, mais si tu l'utilises sans
+comprendre les relations et le N+1, tu finis avec des requêtes lentes et des
+modèles inutiles. Aujourd'hui, tu poses les bases du comportement de données.
+
+2. OBJECTIFS PRÉCIS
+--------------------------------------------------------------------------------
+- utiliser les méthodes de base d'Eloquent,
+- créer un CRUD complet,
+- créer des relations simples,
+- utiliser la pagination,
+- comprendre le N+1,
+- organiser les appels à la base,
+- expliquer les différences entre modèles et requêtes.
+
+3. PRÉREQUIS
+--------------------------------------------------------------------------------
+- Jours 1 à 3 faits,
+- un projet avec une base de données,
+- des migrations et des modèles,
+- savoir utiliser php artisan,
+- savoir lire les erreurs SQL ou Eloquent.
+
+4. PLANNING
+--------------------------------------------------------------------------------
+Matin — 3h
+- 30 min : révision active du jour 3,
+- 45 min : Eloquent et CRUD,
+- 45 min : relations 1:N,
+- 45 min : exercices rapides,
+- 15 min : correction.
+
+Pause méridienne — au moins 30 min.
+
+Après-midi — 3h
+- 30 min : relations 1:1 et N:N,
+- 30 min : pagination,
+- 60 min : exercices unifiés,
+- 30 min : lecture minimale de la doc,
+- 30 min : bilan, suivi, questions.
+
+Soir — 30 min
+- revoir les notions centrales.
+
+5. NOTIONS À APPRENDRE
+--------------------------------------------------------------------------------
+- Eloquent et modèle,
+- CRUD : créer, lire, mettre à jour, supprimer,
+- relations : hasMany, belongsTo, belongsToMany, hasOne,
+- pagination,
+- N+1 et eager loading,
+- lien entre migration, modèle et relation,
+- comment éviter les erreurs classiques d'Eloquent.
+
+6. RESSOURCES À CONSULTER
+--------------------------------------------------------------------------------
+Documentation officielle en priorité :
+- https://laravel.com/docs/eloquent
+- https://laravel.com/docs/relationships
+- https://laravel.com/docs/pagination
+- https://laravel.com/docs/queries
+- https://laravel.com/docs/collections
+
+Ressources disponibles :
+- Laracasts — "30 Days to Learn Laravel" : https://laracasts.com/series/30-days-to-learn-laravel-11
+- Laravel News Bootcamp : https://laravel.com/learn
+
+7. VIDÉOS À REGARDER
+--------------------------------------------------------------------------------
+- pour comprendre les relations Eloquent :
+  https://www.youtube.com/watch?v=gaW9KODumUg
+- pour un rappel sur CRUD et Eloquent :
+  https://www.youtube.com/watch?v=2p6m2c3s4e8
+
+Règle d'or : vois une vidéo pour comprendre, lis la doc pour la précision.
+
+8. COMMANDES UTILES LE JOUR 04
+--------------------------------------------------------------------------------
+- créer un contrôleur de ressource :
+    php artisan make:controller ArticleController --resource
+- créer un modèle :
+    php artisan make:model Article
+- lancer le serveur :
+    php artisan serve
+- voir les routes :
+    php artisan route:list
+
+Tu peux lire :
+- /app/Http/Controllers,
+- /app/Models,
+- /resources/views,
+- /routes/web.php.
+
+9. EXERCICES PRATIQUES
+--------------------------------------------------------------------------------
+Exercice 04.1 — CRUD basique
+- crée un contrôleur de ressource,
+- crée les méthodes index, create, store, show, edit, update, destroy,
+- vérifie que chaque méthode fonctionne.
+
+Exercice 04.2 — Eloquent de base
+- lis des données avec Eloquent,
+- crée une donnée,
+- modifie une donnée,
+- supprime une donnée,
+- vérifie que chaque opération fonctionne.
+
+Exercice 04.3 — Relation 1:N
+- crée une relation hasMany,
+- crée une relation belongsTo,
+- vérifie que la relation fonctionne,
+- affiche des données liées.
+
+Exercice 04.4 — Relation 1:1
+- crée une relation hasOne,
+- crée une relation belongsTo,
+- vérifie que la relation fonctionne.
+
+Exercice 04.5 — Relation N:N
+- crée une relation belongsToMany,
+- crée une table pivot,
+- vérifie que la relation fonctionne,
+- attache et détache des relations.
+
+Exercice 04.6 — Pagination
+- utilise la pagination,
+- affiche les liens de pagination,
+- vérifie que la pagination fonctionne.
+
+Exercice 04.7 — N+1
+- observe le N+1,
+- corrige avec eager loading,
+- compare les requêtes avant et après.
+
+Exercice 04.8 — Organisation
+- organise les appels à la base,
+- évite les appels inutiles,
+- véri1fie que le code reste lisible.
+
+Exercice 04.9 — Exercice complet
+- crée un CRUD complet avec relations,
+- utilise la pagination,
+- corrige le N+1,
+- vérifie la cohérence globale.
+
+Exercice 04.10 — Questions sans support
+- comment lire des données avec Eloquent ?,
+- comment créer une relation 1:N ?,
+- comment créer une relation N:N ?,
+- comment paginer des résultats ?,
+- qu'est-ce que le N+1 et comment le corriger ?.
+
+10. MINI-PROJET DU JOUR
+--------------------------------------------------------------------------------
+Objectif : un CRUD complet avec relations et pagination.
+
+Ce que tu fais :
+- un contrôleur,
+- des modèles,
+- des relations,
+- une pagination,
+- une correction du N+1,
+- vérifier la cohérence globale.
+
+Ce qu'il faut valider :
+- tu peux refaire le CRUD de zéro,
+- tu connais le vocabulaire,
+- tu sais organiser un CRUD simple et cohérent.
+
+11. CE QUE TU ÉVITES
+--------------------------------------------------------------------------------
+- copier sans vérifier,
+- confondre une relation et une attention,
+- utiliser des relations inutiles,
+- oublier le N+1,
+- chercher des tutos au lieu de la doc,
+- tomber sur des tutoriels trop anciens ou pas à jour,
+- confondre Eloquent et SQL brut.
+
+12. GIT
+--------------------------------------------------------------------------------
+    git add .
+    git commit -m "Jour 4 - Eloquent, CRUD, relations, pagination"
+
+13. BILAN ET SUIVI
+--------------------------------------------------------------------------------
+- note ce que tu as fait,
+- note ce que tu as compris,
+- note les difficultés,
+- note les questions pour demain.
+
+================================================================================
+FIN DU JOUR 04
+================================================================================

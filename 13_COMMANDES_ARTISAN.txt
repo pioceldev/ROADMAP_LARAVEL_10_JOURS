@@ -1,0 +1,476 @@
+================================================================================
+13 — COMMANDES ARTISAN ESSENTIELLES
+================================================================================
+
+Ce fichier recense les commandes Artisan utiles pendant la formation et juste
+après. Il ne liste pas toutes les commandes possibles. Il liste celles qui ont
+un usage fréquent et concret.
+
+Astuce générale :
+- php artisan list pour voir les commandes disponibles,
+- php artisan help <commande> pour l'aide d'une commande précise.
+
+--------------------------------------------------------------------------------
+1.php artisan serve
+--------------------------------------------------------------------------------
+Rôle :
+  Démarrer le serveur de développement intégré de Laravel.
+
+Quand l'utiliser :
+  Pendant le développement local, pour tester l'application dans le navigateur.
+
+Exemple :
+  php artisan serve
+
+Explication simple :
+  Laravel démarre un serveur temporaire sur localhost et affiche l'URL.
+  C'est pratique pour tester une application en local sans configurer un vrai
+  serveur web.
+
+--------------------------------------------------------------------------------
+2. php artisan about
+--------------------------------------------------------------------------------
+Rôle :
+  Afficher des informations sur l'environnement et le projet Laravel.
+
+Quand l'utiliser :
+  Lorsqu'on veut vérifier la version, la configuration, ou diagnostiquer un
+  problème environnemental.
+
+Exemple :
+  php artisan about
+
+Explication simple :
+  Cela donne un résumé de votre installation : version de Laravel, PHP, base de
+  données, variables d'environnement importants, etc.
+
+--------------------------------------------------------------------------------
+3. php artisan list
+--------------------------------------------------------------------------------
+Rôle :
+  Lister les commandes Artisan disponibles.
+
+Quand l'utiliser :
+  Dès que vous ne savez pas quelle commande existe, ou pour explorer les options.
+
+Exemple :
+  php artisan list
+  php artisan list make
+
+Explication simple :
+  Artisan expose beaucoup de commandes. Cette commande permet de les voir toutes
+  et de chercher celle dont vous avez besoin.
+
+--------------------------------------------------------------------------------
+4. php artisan make:controller NomDuControleur
+--------------------------------------------------------------------------------
+Rôle :
+  Créer un contrôleur.
+
+Quand l'utiliser :
+  Quand vous voulez regrouper la logique d'une ou plusieurs routes dans une
+  classe dédiée.
+
+Exemple :
+  php artisan make:controller ArticleController
+  php artisan make:controller ArticleController --resource
+
+Explication simple :
+  Un contrôleur permet de séparer la logique des routes. Au lieu d'écrire tout
+  dans routes/web.php, on écrit la logique dans le contrôleur.
+
+--------------------------------------------------------------------------------
+5. php artisan make:model NomModele
+--------------------------------------------------------------------------------
+Rôle :
+  Créer un modèle Eloquent.
+
+Quand l'utiliser :
+  Quand vous voulez représenter une table de la base de données comme un objet
+  Laravel.
+
+Exemple :
+  php artisan make:model Article
+  php artisan make:model Article -m
+
+Explication simple :
+  Le modèle permet de faire des requêtes sur une table. L'option -m crée aussi
+  une migration.
+
+--------------------------------------------------------------------------------
+6. php artisan make:migration create_nom_table_table
+--------------------------------------------------------------------------------
+Rôle :
+  Créer une migration.
+
+Quand l'utiliser :
+  Quand vous voulez créer, modifier ou supprimer une table de façon versionnée.
+
+Exemple :
+  php artisan make:migration create_articles_table
+  php artisan make:migration add_visible_to_articles_table --table=articles
+
+Explication simple :
+  Une migration décrit une modification de la base de données. Elle permet de
+  reconstruire la structure de la base de façon répétable.
+
+--------------------------------------------------------------------------------
+7. php artisan migrate
+--------------------------------------------------------------------------------
+Rôle :
+  Exécuter les migrations en attente.
+
+Quand l'utiliser :
+  Après avoir créé ou modifié des migrations, pour appliquer les changements
+  à la base de données.
+
+Exemple :
+  php artisan migrate
+  php artisan migrate:fresh
+  php artisan migrate:rollback
+  php artisan migrate:status
+
+Explication simple :
+  Cette commande met à jour votre base de données pour qu'elle corresponde aux
+  migrations.
+
+--------------------------------------------------------------------------------
+8. php artisan make:factory NomFactory
+--------------------------------------------------------------------------------
+Rôle :
+  Créer une factory.
+
+Quand l'utiliser :
+  Quand vous voulez générer des données factices pour tester ou remplir la base.
+
+Exemple :
+  php artisan make:factory ArticleFactory
+
+Explication simple :
+  Une factory permet de définir comment créer des données aléatoires pour un
+  modèle. Elle est très utile pour les tests et les seeders.
+
+--------------------------------------------------------------------------------
+9. php artisan make:seeder NomSeeder
+--------------------------------------------------------------------------------
+Rôle :
+  Créer un seeder.
+
+Quand l'utiliser :
+  Quand vous voulez insérer des données de test ou initiales dans la base.
+
+Exemple :
+  php artisan make:seeder ArticleSeeder
+
+Explication simple :
+  Un seeder permet de remplir la base de données avec des données prédéfinies
+  ou générées par une factory.
+
+--------------------------------------------------------------------------------
+10. php artisan db:seed
+--------------------------------------------------------------------------------
+Rôle :
+  Lancer les seeders.
+
+Quand l'utiliser :
+  Quand vous voulez remplir la base de données avec les données de test.
+
+Exemple :
+  php artisan db:seed
+  php artisan db:seed --class=ArticleSeeder
+
+Explication simple :
+  Cette commande exécute le seeder choisi ou le seeder principal pour insérer
+  des données dans la base.
+
+--------------------------------------------------------------------------------
+11. php artisan make:request NomRequest
+--------------------------------------------------------------------------------
+Rôle :
+  Créer une Form Request.
+
+Quand l'utiliser :
+  Quand vous voulez sortir la validation et l'autorisation d'un contrôleur.
+
+Exemple :
+  php artisan make:request StoreArticleRequest
+  php artisan make:request UpdateArticleRequest
+
+Explication simple :
+  Une Form Request centralise les règles de validation et la vérification
+  d'autorisation. Le contrôleur reste plus léger.
+
+--------------------------------------------------------------------------------
+12. php artisan make:policy NomPolicy --model=NomModele
+--------------------------------------------------------------------------------
+Rôle :
+  Créer une policy d'autorisation.
+
+Quand l'utiliser :
+  Quand vous voulez définir des règles d'autorisation liées à un modèle.
+
+Exemple :
+  php artisan make:policy ArticlePolicy --model=Article
+
+Explication simple :
+  Une policy permet de décider si un utilisateur peut faire telle action sur
+  telle ressource.
+
+--------------------------------------------------------------------------------
+13. php artisan make:middleware NomMiddleware
+--------------------------------------------------------------------------------
+Rôle :
+  Créer un middleware.
+
+Quand l'utiliser :
+  Quand vous voulez filtrer les requêtes, par exemple pour vérifier une
+  condition d'accès.
+
+Exemple :
+  php artisan make:middleware CheckAdmin
+
+Explication simple :
+  Un middleware est exécuté avant ou après une requête. Il permet de protéger
+  des routes ou d'appliquer des règles globales.
+
+--------------------------------------------------------------------------------
+14. php artisan route:list
+--------------------------------------------------------------------------------
+Rôle :
+  Afficher la liste des routes.
+
+Quand l'utiliser :
+  Pour vérifier les routes disponibles et leurs méthodes.
+
+Exemple :
+  php artisan route:list
+  php artisan route:list --columns=method,uri,action
+
+Explication simple :
+  Cette commande aide à voir quel chemin est géré et par quel contrôleur ou
+  closure.
+
+--------------------------------------------------------------------------------
+15. php artisan make:resource NomResource
+--------------------------------------------------------------------------------
+Rôle :
+  Créer une API Resource.
+
+Quand l'utiliser :
+  Quand vous voulez transformer un modèle ou une collection en réponse JSON
+  structurée.
+
+Exemple :
+  php artisan make:resource ArticleResource
+  php artisan make:resource ArticleCollection
+
+Explication simple :
+  Une resource permet de choisir quels champs retourner dans une API et sous
+  quelle forme.
+
+--------------------------------------------------------------------------------
+16. php artisan make:test NomTest
+--------------------------------------------------------------------------------
+Rôle :
+  Créer un fichier de test.
+
+Quand l'utiliser :
+  Quand vous voulez tester une fonctionnalité.
+
+Exemple :
+  php artisan make:test ArticleApiTest
+  php artisan make:test ArticleCrudTest
+
+Explication simple :
+  Un test permet de vérifier automatiquement qu'une partie du code fonctionne
+  comme prévu.
+
+--------------------------------------------------------------------------------
+17. php artisan test
+--------------------------------------------------------------------------------
+Rôle :
+  Lancer les tests du projet.
+
+Quand l'utiliser :
+  Pendant le développement, pour vérifier que le code ne casse pas les tests
+  existants.
+
+Exemple :
+  php artisan test
+  php artisan test --filter=NomDuTest
+  php artisan test tests/Feature/NomDuTest.php
+
+Explication simple :
+  Cette commande exécute les tests et affiche les résultats.
+
+--------------------------------------------------------------------------------
+18. php artisan tinker
+--------------------------------------------------------------------------------
+Rôle :
+  Ouvrir une console interactive pour tester du code Laravel.
+
+Quand l'utiliser :
+  Pour tester des requêtes Eloquent, des appels de service, ou explorer la
+  base sans passer par le navigateur.
+
+Exemple :
+  php artisan tinker
+  >>> App\Models\Article::count()
+  >>> App\Models\Article::first()
+
+Explication simple :
+  Tinker permet d'exécuter du code PHP dans le contexte de Laravel. C'est très
+  pratique pour comprendre et déboguer.
+
+--------------------------------------------------------------------------------
+19. php artisan config:clear
+--------------------------------------------------------------------------------
+Rôle :
+  Vider le cache de configuration.
+
+Quand l'utiliser :
+  Quand vous changez un fichier de configuration et que Laravel n'arrive pas
+  à prendre en compte les modifications.
+
+Exemple :
+  php artisan config:clear
+
+Explication simple :
+  Laravel met parfois en cache la configuration. Cette commande force un
+  rechargement.
+
+--------------------------------------------------------------------------------
+20. php artisan cache:clear
+--------------------------------------------------------------------------------
+Rôle :
+  Vider le cache de l'application.
+
+Quand l'utiliser :
+  Quand vous voulez nettoyer le cache général de l'application.
+
+Exemple :
+  php artisan cache:clear
+
+Explication simple :
+  Utile si vous avez des comportements inattendus liés au cache.
+
+--------------------------------------------------------------------------------
+21. php artisan view:clear
+--------------------------------------------------------------------------------
+Rôle :
+  Vider le cache des vues compilées.
+
+Quand l'utiliser :
+  Quand une vue Blade ne se met pas à jour comme prévu.
+
+Exemple :
+  php artisan view:clear
+
+Explication simple :
+  Blade compile les vues. Parfois il faut forcer la régénération.
+
+--------------------------------------------------------------------------------
+22. php artisan route:clear
+--------------------------------------------------------------------------------
+Rôle :
+  Vider le cache des routes.
+
+Quand l'utiliser :
+  Quand les routes ne semblent pas à jour.
+
+Exemple :
+  php artisan route:clear
+
+Explication simple :
+  Laravel peut mettre en cache les routes. Cette commande permet de forcer une
+  nouvelle lecture.
+
+--------------------------------------------------------------------------------
+23. php artisan storage:link
+--------------------------------------------------------------------------------
+Rôle :
+  Créer un lien symbolique vers le dossier de stockage public.
+
+Quand l'utiliser :
+  Quand vous voulez rendre des fichiers uploadés accessibles via une URL publique.
+
+Exemple :
+  php artisan storage:link
+
+Explication simple :
+  Sans ce lien, les fichiers dans storage/app/public ne sont pas directement
+  accessibles par le navigateur.
+
+--------------------------------------------------------------------------------
+24. php artisan install:api
+--------------------------------------------------------------------------------
+Rôle :
+  Installer les composants nécessaires pour les routes API selon votre version.
+
+Quand l'utiliser :
+  Quand vous voulez utiliser les routes API dans un projet qui ne les a pas
+  encore activées.
+
+Exemple :
+  php artisan install:api
+
+Explication simple :
+  Cette commande configure les éléments nécessaires pour servir des routes API
+  dans votre projet.
+
+--------------------------------------------------------------------------------
+25. commandes utiles de composer
+--------------------------------------------------------------------------------
+Rôle :
+  Gérer les dépendances PHP du projet.
+
+Quand l'utiliser :
+  Pour installer, mettre à jour, ou vérifier les packages Laravel.
+
+Exemples :
+  composer install
+  composer update
+  composer require laravel/breeze --dev
+  composer show
+  composer show laravel/framework
+
+Explication simple :
+  Composer gère les librairies PHP. Laravel en dépend. Il faut comprendre la
+  différence entre install et update.
+
+--------------------------------------------------------------------------------
+NOTES IMPORTANTES SUR LES COMMANDES
+--------------------------------------------------------------------------------
+
+- Les commandes peuvent varier selon la version de Laravel. Vérifiez toujours
+  avec php artisan help ou la documentation officielle de votre version.
+- Utiliser --help pour voir les options disponibles :
+    php artisan <commande> --help
+- Pour voir la version du framework :
+    php artisan --version
+    ou
+    composer show laravel/framework
+
+--------------------------------------------------------------------------------
+COMMANDES À MEMORISER EN PRIORITÉ
+--------------------------------------------------------------------------------
+
+Pour les 10 jours, essayez de retenir surtout :
+1. php artisan serve
+2. php artisan make:controller
+3. php artisan make:model
+4. php artisan make:migration
+5. php artisan migrate
+6. php artisan make:factory / make:seeder
+7. php artisan db:seed
+8. php artisan make:request
+9. php artisan route:list
+10. php artisan tinker
+11. php artisan test
+12. php artisan about
+
+Elles couvrent la grande majorité des tâches quotidiennes de l'apprentissage.
+
+================================================================================
+FIN DU FICHIER 13 — COMMANDES ARTISAN
+================================================================================

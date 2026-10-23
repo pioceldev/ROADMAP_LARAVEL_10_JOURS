@@ -1,0 +1,198 @@
+================================================================================
+JOUR 02 — ROUTES, CONTRÔLEURS, BLADE ET PASSAGE DE DONNÉES
+================================================================================
+
+1. OBJECTIF DU JOUR
+--------------------------------------------------------------------------------
+- maîtriser les routes Laravel,
+- écrire des contrôleurs pour organiser le code,
+- créer des vues Blade,
+- utiliser les layouts et composants Blade,
+- passer des données entre le contrôleur et la vue,
+- corriger des erreurs courantes de routing et de rendu.
+
+Ce qu'il faut retenir : les routes sont la porte d'entrée, les contrôleurs
+organisent la logique, les vues affichent. Un jour 2 propre évite une foule de
+bugs la semaine suivante.
+
+2. OBJECTIFS PRÉCIS
+--------------------------------------------------------------------------------
+- différencier GET, POST, PUT, DELETE dans Laravel,
+- utiliser les noms de routes,
+- créer des contrôleurs, méthodes, routes associées,
+- créer des vues avec Blade,
+- utiliser un layout,
+- utiliser des sections ou des composants simples,
+- afficher un message d'erreur,
+- récupérer des données transmises par le contrôleur.
+
+3. PRÉREQUIS
+--------------------------------------------------------------------------------
+- Jour 1 fait,
+- un projet Laravel en place,
+- un éditeur configuré,
+- savoir lire les messages d'erreur du framework.
+
+4. PLANNING
+--------------------------------------------------------------------------------
+Matin — 3h
+- 30 min : révision active du jour 1,
+- 45 min : routes et contrôleurs,
+- 45 min : Blade et layouts,
+- 45 min : exercices rapides,
+- 15 min : correction.
+
+Pause méridienne — au moins 30 min.
+
+Après-midi — 3h
+- 30 min : rappel de l'option de passage de données,
+- 30 min : composants Blade simples,
+- 60 min : exercices unifiés,
+- 30 min : lecture minimale de la doc,
+- 30 min : bilan, suivi, questions.
+
+Soir — 30 min
+- revoir les notions centrales du jour.
+
+5. NOTIONS À APPRENDRE
+--------------------------------------------------------------------------------
+- routes et contrôleurs,
+- routes nommées,
+- Blade et layouts,
+- composants Blade,
+- passage de données et affichage,
+- helpers Laravel,
+- fichiers de configuration de base,
+- comment éviter les erreurs classiques.
+
+6. RESSOURCES À CONSULTER
+--------------------------------------------------------------------------------
+Documentation officielle en priorité :
+- https://laravel.com/docs/routing
+- https://laravel.com/docs/controllers
+- https://laravel.com/docs/blade
+- https://laravel.com/docs/views
+
+Ressources disponibles :
+- Laracasts — "30 Days to Learn Laravel" : https://laracasts.com/series/30-days-to-learn-laravel-11
+- Laravel News Bootcamp : https://laravel.com/learn
+
+7. VIDÉOS À REGARDER
+--------------------------------------------------------------------------------
+- pour un rappel de la structure de projet et des routes :
+  https://www.youtube.com/watch?v=2p6m2c3s4e8
+- pour un rappel visuel de Blade :
+  https://www.youtube.com/watch?v=5IACWsTc_0E
+
+Règle d'or : vois une vidéo pour comprendre, lis la doc pour la précision.
+
+8. COMMANDES UTILES LE JOUR 02
+--------------------------------------------------------------------------------
+- créer un contrôleur avec méthode index :
+    php artisan make:controller MonController
+- lancer le serveur :
+    php artisan serve
+- voir les routes :
+    php artisan route:list
+
+Tu peux lire :
+- /app/Http/Controllers,
+- /resources/views,
+- /routes/web.php.
+
+9. EXERCICES PRATIQUES
+--------------------------------------------------------------------------------
+Exercice 02.1 — Création de routes
+- crée des routes pour une page, une liste, un détail,
+- utilise des noms de routes,
+- vérifie chaque route avec php artisan route:list.
+
+Exercice 02.2 — Contrôleur de base
+- crée un contrôleur,
+- crée une méthode index,
+- fait pointer la route vers cette méthode,
+- vérifie que ça marche.
+
+Exercice 02.3 — Vue Blade simple
+- crée une vue Blade,
+- affiche des données,
+- vérifie que le rendu correspond.
+
+Exercice 02.4 — Layout
+- crée un layout,
+- étends-le dans une vue,
+- vérifie que le rendu est cohérent.
+
+Exercice 02.5 — Sections Blade
+- crée des sections dans le layout,
+- remplis les sections dans une vue,
+- vérifie le résultat.
+
+Exercice 02.6 — Composants simples
+- crée un composant simple,
+- utilise le composant dans une vue,
+- vérifie que ça s'affiche.
+
+Exercice 02.7 — Passage de données
+- crée une route qui transmet des données,
+- affiche les données dans la vue,
+- vérifie la cohérence.
+
+Exercice 02.8 — Affichage d'erreurs
+- injecte un message d'erreur dans la vue,
+- affiche le message,
+- vérifie que c'est bien visible.
+
+Exercice 02.9 — Exercice complet
+- crée une page qui affiche une liste d'objets,
+- utilise un contrôleur,
+- utilise une vue avec layout,
+- transmet des données,
+- vérifie que tout est cohérent.
+
+Exercice 02.10 — Questions sans support
+- à quoi sert un nom de route ?,
+- qu'est-ce qu'un contrôleur ?,
+- comment passer des données à une vue ?,
+- à quoi sert un layout ?,
+- comment afficher une erreur ?.
+
+10. MINI-PROJET DU JOUR
+--------------------------------------------------------------------------------
+Objectif : un affichage structuré d'une liste d'objets.
+
+Ce que tu fais :
+- un contrôleur,
+- des routes,
+- des vues avec layout,
+- des données transmises,
+- vérifier la cohérence globale.
+
+Ce qu'il faut valider :
+- tu peux refaire la structure de zéro,
+- tu connais le vocabulaire,
+- tu sais organiser un affichage simple.
+
+11. CE QUE TU ÉVITES
+--------------------------------------------------------------------------------
+- copier sans vérifier,
+- confondre route et contrôleur,
+- mettre de la logique lourde dans une vue,
+- chercher des tutos au lieu de la doc,
+- tomber sur des tutoriels trop anciens ou pas à jour.
+
+12. GIT
+--------------------------------------------------------------------------------
+    git add .
+    git commit -m "Jour 2 - routes, contrôleurs, Blade"
+
+13. BILAN ET SUIVI
+--------------------------------------------------------------------------------
+- note ce que tu as fait,
+- note ce que tu as compris,
+- note les difficultés,
+- note les questions pour demain.
+
+================================================================================
+FIN DU JOUR 02
+================================================================================

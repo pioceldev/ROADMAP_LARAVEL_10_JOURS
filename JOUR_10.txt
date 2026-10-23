@@ -1,0 +1,169 @@
+================================================================================
+JOUR 10 — PROJET FINAL ET BILAN GLOBAL
+================================================================================
+
+1. OBJECTIF DU JOUR
+--------------------------------------------------------------------------------
+- réaliser un projet complet qui réutilise les notions des jours 1 à 9,
+- faire un bilan global de ton apprentissage,
+- vérifier que tu peux refaire les notions clés sans copier-coller,
+- noter les points forts et les points à retravailler,
+- conclure la formation avec une checklist personnelle.
+
+Ce qu'il faut retenir : aujourd'hui, tu ne suis pas un tuto. Tu utilises tout ce
+que tu as appris pour construire quelque chose de cohérent, de testable, de
+maintenable, et de suffisamment sécurisé pour être présenté comme un travail
+personnel.
+
+2. OBJECTIFS PRÉCIS
+--------------------------------------------------------------------------------
+- construire un projet complet autour d'un thème défini,
+- utiliser les notions clés : routes, contrôleurs, vues, migrations, modèles,
+  relations, validation, auth, middleware, API, tests,
+- organiser le code de manière lisible et testable,
+- vérifier la qualité du projet avec des tests et des checklists,
+- faire un bilan personnel réaliste,
+- identifier les prochaines étapes concrètes.
+
+3. PRÉREQUIS
+--------------------------------------------------------------------------------
+- jours 1 à 9 faits,
+- un projet existant ou un projet vierge pour le jour 10,
+- une base de données active,
+- les notions clés pratiquées,
+- la volonté de refaire sans copier-coller quand tu dois valider que tu sais faire.
+
+4. PLANNING (version directe)
+--------------------------------------------------------------------------------
+Matin — 3h
+- 30 min : choix du projet et définition du périmètre,
+- 45 min : architecture du projet, routes et contrôleurs,
+- 45 min : modèles et relations,
+- 45 min : validation, auth, middleware si besoin,
+- 15 min : correction.
+
+Pause méridienne — au moins 30 min.
+
+Après-midi — 3h
+- 30 min : API et/ou CRUD selon le périmètre,
+- 30 min : tests et/ou amélioration de la qualité,
+- 60 min : finalisation et ajustements,
+- 30 min : bilan personnel, suivi, questions,
+- 30 min : préparation des prochaines étapes.
+
+Soir — 30 min
+- rappel sans notes : ce que tu sais faire, ce qui reste fragile, les prochaines
+  étapes.
+
+5. CE QUE TU DOIS COMPRENDRE AVANT DE CODER
+--------------------------------------------------------------------------------
+- un projet final de formation n'est pas un projet de production lourde,
+- le but est de montrer que tu peux combiner les notions dans un contexte réel,
+- tu dois pouvoir expliquer pourquoi tu as choisi telle organisation,
+- tu dois pouvoir refaire les points clés sans copier-coller,
+- le projet doit être à ton niveau, pas au niveau d'une équipe de seniors,
+- un projet réaliste est mieux qu'un projet ambitieux inabouti.
+
+6. NOTIONS CLÉS (directes)
+--------------------------------------------------------------------------------
+- mise en situation complète,
+- choix d'architecture,
+- CRUD complet ou API complète ou les deux selon le périmètre,
+- validation cohérente,
+- auth et autorisation si besoin,
+- organisation du code,
+- tests ou checklists de qualité,
+- bilan et prochaines étapes.
+
+7. RESSOURCES OFFICIELLES À PRIORITÉ
+--------------------------------------------------------------------------------
+- https://laravel.com/docs
+- https://laravel.com/docs/eloquent
+- https://laravel.com/docs/validation
+- https://laravel.com/docs/testing
+- https://laravel.com/docs/routing
+- https://laravel.com/docs/controllers
+- https://laravel.com/docs/blade
+- https://laravel.com/docs/authentication
+- https://laravel.com/docs/authorization
+
+8. EXERCICES PRATIQUES
+--------------------------------------------------------------------------------
+Exercice 10.1 — Définir le projet
+- choisis un sujet simple mais complet,
+- définit les fonctionnalités minimales,
+- définis le périmètre,
+- note ce qui est hors sujet.
+
+Exercice 10.2 — Architecture
+- dessine ou note l'architecture du projet,
+- choisis les routes, contrôleurs, modèles, relations,
+- note pourquoi tu fais ces choix.
+
+Exercice 10.3 — Implémentation
+- implémente le projet,
+- valide chaque fonctionnalité,
+- vérifie la cohérence globale.
+
+Exercice 10.4 — Qualité
+- ajoute des tests si possible,
+- vérifie les points faibles,
+- corrige les problèmes identifiés.
+
+Exercice 10.5 — Bilan personnel
+- note ce que tu sais faire,
+- note ce qui reste fragile,
+- note les prochaines étapes.
+
+Exercice 10.6 — Refaire sans copier-coller
+- choisis une fonctionnalité clé,
+- refais-la sans copier-coller,
+- vérifie que tu sais le faire seul.
+
+Exercice 10.7 — Questions sans support
+- que sais-tu faire maintenant ?,
+- qu'est-ce qui reste difficile ?,
+- que feras-tu après cette formation ?,
+- quelles sont les prochaines étapes concrètes ?.
+
+9. MINI-PROJET DU JOUR
+--------------------------------------------------------------------------------
+Objectif : un projet complet cohérent, testable, maintenable, à ton niveau.
+
+Ce que tu fais :
+- choisis un sujet,
+- implémente le projet,
+- ajoutes des tests ou des checklists,
+- vérifie la qualité,
+- fais le bilan.
+
+Ce qu'il faut valider :
+- tu peux expliquer pourquoi tu as fait ces choix,
+- tu peux refaire les points clés sans copier-coller,
+- tu connais les prochaines étapes.
+
+10. CE QUE TU ÉVITES
+--------------------------------------------------------------------------------
+- choisir un projet trop ambitieux pour le temps disponible,
+- copier sans comprendre,
+- négliger la qualité au profit de la quantité,
+- oublier les tests ou les checklists,
+- finir sans bilan,
+- chercher des tutos au lieu de la doc,
+- tomber sur des tutoriels trop anciens ou pas à jour.
+
+11. GIT
+--------------------------------------------------------------------------------
+    git add .
+    git commit -m "Jour 10 - projet final et bilan"
+
+12. BILAN ET SUIVI
+--------------------------------------------------------------------------------
+- note ce que tu as fait,
+- note ce que tu as compris,
+- note les difficultés,
+- note les prochaines étapes.
+
+================================================================================
+FIN DU JOUR 10
+================================================================================

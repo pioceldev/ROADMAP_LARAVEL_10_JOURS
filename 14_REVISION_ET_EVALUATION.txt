@@ -1,0 +1,385 @@
+================================================================================
+14 — RÉVISION ET ÉVALUATION
+================================================================================
+
+Ce fichier contient :
+- des questions de révision par jour,
+- des exercices pratiques,
+- des mini-défis,
+- des questions techniques,
+- un examen final,
+- une grille d'évaluation,
+- une liste des compétences à vérifier avant de considérer la formation
+  suffisamment exploitée.
+
+--------------------------------------------------------------------------------
+1. RÉVISION PAR JOUR
+--------------------------------------------------------------------------------
+
+Jour 1
+- Qu'est-ce que Laravel et pourquoi l'utiliser ?
+- Qu'est-ce que le MVC ?
+- Quelles sont les grandes étapes d'une requête Laravel ?
+- Comment créez-vous une route et un contrôleur ?
+- Comment passez-vous des données à une vue ?
+- Quel est le rôle d'Artisan ?
+
+Jour 2
+- Comment créer une route nommée ?
+- Comment utiliser un paramètre de route obligatoire ?
+- Comment utiliser un paramètre optionnel ?
+- Comment faire un layout Blade ?
+- Comment afficher une boucle et une condition dans Blade ?
+- Quelle est la différence entre une closure de route et un contrôleur ?
+
+Jour 3
+- À quoi sert une migration ?
+- Pourquoi ne modifie-t-on pas une migration déjà exécutée ?
+- Quelle est la différence entre factory et seeder ?
+- Comment configurer la connexion à la base de données ?
+- Qu'est-ce que fillable ou guarded ?
+- Pourquoi les timestamps sont-ils souvent présents ?
+
+Jour 4
+- Comment définir une relation One-to-Many ?
+- Comment définir une relation Many-to-Many ?
+- Qu'est-ce que le N+1 et comment le corriger ?
+- Comment faire une pagination avec Eloquent ?
+- Qu'est-ce qu'un scope ?
+- Comment lire les requêtes SQL générées par Eloquent ?
+
+Jour 5
+- Pourquoi un formulaire doit inclure @csrf ?
+- Comment récupérer les données validées ?
+- Comment afficher les erreurs dans Blade ?
+- Quelle est la différence entre GET et POST dans un formulaire ?
+- Comment valider un fichier ?
+- Pourquoi utiliser old() ?
+
+Jour 6
+- Quelle est la différence entre auth et authorization ?
+- Comment protéger une route par authentification ?
+- Qu'est-ce qu'un middleware ?
+- Qu'est-ce qu'une policy ?
+- Qu'est-ce qu'une gate ?
+- Comment utiliser @can dans Blade ?
+
+Jour 7
+- Qu'est-ce qu'une API REST ?
+- Comment retourner une réponse JSON dans Laravel ?
+- Qu'est-ce qu'une API Resource ?
+- Comment protéger des routes API ?
+- Quels codes de statut HTTP utiliser pour créer, modifier, supprimer ?
+- Comment valider les données dans une API ?
+
+Jour 8
+- Qu'est-ce qu'une Form Request ?
+- Quelle est la différence entre rules() et authorize() ?
+- Qu'est-ce que l'injection de dépendances ?
+- Quand créer un service ?
+- Pourquoi ne pas mettre les secrets dans le code ?
+- Quel est le rôle de .env ?
+
+Jour 9
+- Comment lancer les tests Laravel ?
+- Quelle est la différence entre un test unitaire et un test fonctionnel ?
+- Où se trouvent les logs ?
+- Comment observer les requêtes SQL ?
+- Comment corriger un N+1 en situation réelle ?
+- Pourquoi certains tests passent-ils ou échouent-ils ?
+
+Jour 10
+- Quelles sont les 3 compétences dont vous êtes le plus satisfait ?
+- Quelles sont les 3 compétences les plus fragiles ?
+- Pourquoi documenter un projet ?
+- Comment vérifiez-vous que votre projet est vraiment fonctionnel ?
+- Qu'est-ce qui a changé entre le début et la fin de la formation ?
+
+--------------------------------------------------------------------------------
+2. EXERCICES PRATIQUES DE RÉVISION
+--------------------------------------------------------------------------------
+
+Exercice 1 — Reproduction sans notes
+
+Choisissez 3 notions suivantes :
+- créer un contrôleur et une route,
+- faire un layout Blade,
+- créer une migration et la lancer,
+- créer un modèle et une factory,
+- définir une relation 1:N,
+- valider un formulaire avec @csrf et old(),
+- protéger une route par auth,
+- créer une route API et une API Resource,
+- écrire un test basique,
+- lire un log ou déboguer une erreur.
+
+Reproduisez chaque notion dans un projet vierge ou dans votre projet de formation
+sans copier-coller. Expliquez chaque ligne à voix haute.
+
+Exercice 2 — Explication orale
+
+Choisissez 3 notions et expliquez-les sans regarder la documentation, comme si
+vous deviez les enseigner à un autre développeur qui vient de finir PHP.
+
+Exercice 3 — Lecture de code
+
+Prenez un fichier de votre projet et expliquez :
+- ce que fait chaque méthode ou bloc important,
+- pourquoi il est organisé ainsi,
+- comment il se connecte avec le reste du projet,
+- ce qui serait à améliorer.
+
+Exercice 4 — Audit rapide
+
+Dans votre projet, trouvez :
+- une route,
+- un contrôleur,
+- une vue Blade,
+- une migration,
+- un modèle,
+- une factory ou un seeder,
+- une validation,
+- une autorisation (middleware ou policy),
+- une réponse API ou un contrôleur web,
+- un test,
+- un fichier .env important.
+
+Expliquez à quoi chaque élément sert dans votre projet.
+
+--------------------------------------------------------------------------------
+3. MINI-DÉFIS
+--------------------------------------------------------------------------------
+
+Défi 1 — Formulaire complet
+- Créez un formulaire de création avec CSRF, validation, messages d'erreur,
+  old(), et un upload optionnel.
+- Testez les cas valides et invalides.
+
+Défi 2 — Relation avec contrainte
+- Créez une relation 1:N avec une contrainte métier.
+- Vérifiez que seules les données autorisées sont accessibles.
+
+Défi 3 — API avec erreur cohérente
+- Créez un endpoint qui crée une ressource.
+- Retournez une erreur JSON cohérente si la validation échoue.
+- Protégez l'écriture si possible.
+
+Défi 4 — N+1 volontaire puis correction
+- Écrivez du code qui provoque intentionnellement un N+1.
+- Observez le nombre de requêtes.
+- Corrigez avec with().
+- Comparez.
+
+Défi 5 — Refactorisation
+- Prenez un contrôleur trop chargé et faites-le plus léger.
+- Expliquez ce que vous avez déplacé et pourquoi.
+
+Défi 6 — Policy ou gate
+- Créez une règle d'autorisation basée sur un contexte simple.
+- Vérifiez que les actions non autorisées sont bloquées.
+
+Défi 7 — Test qui devrait échouer
+- Écrivez un test qui devrait échouer si une règle est violée.
+- Vérifiez que le test échoue comme prévu.
+- Corrigez le code si nécessaire.
+
+Défi 8 — Debug volontaire
+- Introduisez une erreur simple dans votre projet.
+- Diagnostiquez-la avec les logs ou le mode debug.
+- Corrigez-la.
+
+Défi 9 — Lecture du cycle de requête
+- Prenez une requête réelle et expliquez chaque étape du cycle Laravel.
+
+Défi 10 — Documentation minimale
+- Écrivez un README minimal qui permette à un autre développeur de lancer votre
+  projet.
+
+--------------------------------------------------------------------------------
+4. QUESTIONS TECHNIQUES
+--------------------------------------------------------------------------------
+
+Q1. Qu'est-ce qu'Eloquent ?
+Q2. Qu'est-ce qu'une migration et pourquoi est-elle réversible ?
+Q3. Qu'est-ce qu'une factory ?
+Q4. Qu'est-ce qu'un seeder ?
+Q5. Qu'est-ce qu'un contrôleur de ressources ?
+Q6. Qu'est-ce qu'une Form Request ?
+Q7. Qu'est-ce qu'un middleware ?
+Q8. Qu'est-ce qu'une policy ?
+Q9. Qu'est-ce qu'une gate ?
+Q10. Qu'est-ce qu'une API Resource ?
+Q11. Pourquoi utiliser Sanctum ou un autre système d'auth API ?
+Q12. Qu'est-ce qu'un test fonctionnel dans Laravel ?
+Q13. Où Laravel logue-t-il les erreurs par défaut ?
+Q14. Pourquoi activer le mode debug en local et le désactiver en production ?
+Q15. Qu'est-ce que le N+1 ?
+Q16. Comment corriger le N+1 ?
+Q17. Comment générer une URL depuis le nom d'une route ?
+Q18. Comment afficher une variable dans Blade ?
+Q19. Comment mettre à jour un modèle avec Eloquent ?
+Q20. Comment supprimer un modèle avec Eloquent ?
+Q21. Qu'est-ce que fillable ?
+Q22. Qu'est-ce que guarded ?
+Q23. Pourquoi un contrôleur peut devenir difficile à maintenir ?
+Q24. Qu'est-ce qu'un service dans Laravel ?
+Q25. Pourquoi .env ne doit pas être committé ?
+Q26. Comment tester qu'une route protégée redirige ?
+Q27. Comment valider un fichier uploadé ?
+Q28. Quel est le rôle de php artisan tinker ?
+Q29. Quel est le rôle de php artisan route:list ?
+Q30. Qu'est-ce qu'une relation pivot ?
+
+--------------------------------------------------------------------------------
+5. EXAMEN FINAL
+--------------------------------------------------------------------------------
+
+Cet examen n'est pas un quiz à citer de mémoire. C'est un exercice de
+vérification réelle. Faites-le sans copier-coller.
+
+Partie A — Questions courtes
+Répondez en 1 ou 2 phrases.
+
+A1. Qu'est-ce que Laravel ?
+A2. Qu'est-ce que le MVC ?
+A3. Comment créez-vous une route ?
+A4. Comment créez-vous un contrôleur ?
+A5. Comment créez-vous une migration ?
+A6. Comment lancez-vous les migrations ?
+A7. Qu'est-ce qu'une factory ?
+A8. Qu'est-ce qu'un seeder ?
+A9. Qu'est-ce qu'un modèle Eloquent ?
+A10. Qu'est-ce qu'une relation 1:N ?
+A11. Qu'est-ce que le N+1 ?
+A12. Comment corriger le N+1 ?
+A13. Qu'est-ce que @csrf ?
+A14. Comment validez-vous un formulaire ?
+A15. Comment affichez-vous les erreurs dans Blade ?
+A16. Comment protégez-vous une route par auth ?
+A17. Qu'est-ce qu'un middleware ?
+A18. Qu'est-ce qu'une policy ?
+A19. Qu'est-ce qu'une gate ?
+A20. Comment retourner une réponse JSON ?
+A21. Qu'est-ce qu'une API Resource ?
+A22. Qu'est-ce qu'une Form Request ?
+A23. Qu'est-ce que l'injection de dépendances ?
+A24. Où se trouvent les logs ?
+A25. Comment lancer les tests ?
+A26. Que signifie APP_DEBUG ?
+A27. Qu'est-ce que .env ?
+A28. Pourquoi ne pas écrire les secrets dans le code ?
+A29. Qu'est-ce qu'un test ?
+A30. Comment vérifiez-vous que votre projet est fonctionnel ?
+
+Partie B — Exercices pratiques
+Choisissez au moins 3 des exercices suivants et réalisez-les.
+
+B1. Créez un modèle, une migration, une factory, un seeder, et vérifiez que
+    les données sont en base.
+B2. Créez une relation 1:N entre deux modèles.
+B3. Créez une relation N:N avec une table pivot.
+B4. Créez un formulaire de création avec validation et @csrf.
+B5. Créez une route protégée par auth et une policy ou gate basique.
+B6. Créez un endpoint API qui retourne un JSON cohérent.
+B7. Écrivez un test qui vérifie une validation ou une action protégée.
+B8. Détectez et corrigez un N+1 dans votre projet.
+B9. Créez un middleware simple et appliquez-le à une route.
+B10. Refactorisez un contrôleur pour le rendre plus lisible.
+
+Partie C — Questions de conception
+Répondez en quelques lignes.
+
+C1. Pourquoi organiser le code dans un contrôleur plutôt que dans routes/web.php ?
+C2. Pourquoi séparer validation et traitement ?
+C3. Pourquoi créer une policy ?
+C4. Pourquoi retourner des réponses cohérentes dans une API ?
+C5. Pourquoi documenter un projet ?
+
+--------------------------------------------------------------------------------
+6. GRILLE D'ÉVALUATION
+--------------------------------------------------------------------------------
+
+Pour chaque ligne, notez :
+- maîtrisé : je peux le faire seul et l'expliquer,
+- fragile : je peux le faire mais je ne suis pas sûr de tout comprendre,
+- non maîtrisé : je ne sais pas le faire tout seul.
+
+[ ] Créer et configurer un projet Laravel.
+[ ] Lire la documentation officielle pour une notion précise.
+[ ] Créer une route web et une route API.
+[ ] Créer un contrôleur et l'utiliser.
+[ ] Créer une vue Blade avec layout et passage de données.
+[ ] Créer une migration et la lancer.
+[ ] Créer une factory et un seeder.
+[ ] Créer un modèle Eloquent.
+[ ] Faire un CRUD basique.
+[ ] Définir une relation 1:N.
+[ ] Définir une relation N:N.
+[ ] Corriger un N+1 basique.
+[ ] Utiliser la pagination Eloquent.
+[ ] Créer un formulaire sécurisé avec @csrf.
+[ ] Valider les données entrantes.
+[ ] Afficher les erreurs et old() dans Blade.
+[ ] Gérer un upload basique.
+[ ] Installer et utiliser un kit d'authentification.
+[ ] Protéger des routes par auth.
+[ ] Créer et utiliser un middleware.
+[ ] Créer et utiliser une policy ou une gate.
+[ ] Créer une API REST simple.
+[ ] Utiliser une API Resource ou un format JSON cohérent.
+[ ] Protéger des endpoints API.
+[ ] Écrire un test basique.
+[ ] Lancer les tests et les lire.
+[ ] Lire les logs et déboguer une erreur simple.
+[ ] Utiliser Artisan pour les tâches courantes.
+[ ] Utiliser un service simple ou une Form Request.
+[ ] Gérer la configuration et .env.
+[ ] Utiliser Git sur le projet.
+[ ] Documenter un projet pour le relancer.
+[ ] Expliquer une notion à voix haute sans notes.
+
+--------------------------------------------------------------------------------
+7. LISTE DES COMPÉTENCES À VÉRIFIER AVANT DE CONSIDÉRER LA FORMATION
+  SUFFISAMMENT EXPLOITÉE
+--------------------------------------------------------------------------------
+
+Une formation de 10 jours ne rend pas expert. Mais pour en tirer un réel
+bénéfice, vous devez au moins pouvoir :
+
+1. Créer et configurer un projet Laravel.
+2. Lire la documentation officielle pour avancer seul.
+3. Créer une application avec :
+   - routes,
+   - contrôleurs,
+   - vues Blade,
+   - migrations,
+   - modèles,
+   - relations,
+   - validation,
+   - auth basique,
+   - autorisations basiques,
+   - API simple si besoin,
+   - tests basiques,
+   - documentation de démarrage.
+4. Déboguer les erreurs classiques.
+5. Utiliser Artisan pour les tâches courantes.
+6. Raconter ce que vous avez appris et ce qui vous reste fragile.
+
+Si vous ne pouvez pas faire ces choses sans copier-coller aveugle, la
+formation n'est pas terminée à votre niveau. Reprenez les jours concernés.
+
+--------------------------------------------------------------------------------
+8. COMMENT UTILISER CE FICHIER
+--------------------------------------------------------------------------------
+
+1. Faites la révision d'un jour avant de commencer le jour suivant.
+2. Choisissez les exercices qui correspondent à vos points faibles.
+3. Choisissez les mini-défis pour tester votre autonomie.
+4. Faites l'examen final à la fin des 10 jours ou après un temps de
+   révision.
+5. Utilisez la grille d'évaluation pour voir ce qui est vraiment acquis.
+6. Notez les cases "non maîtrisé" dans le suivi et prévoyez de les retravailler.
+
+================================================================================
+FIN DU FICHIER 14 — RÉVISION ET ÉVALUATION
+================================================================================

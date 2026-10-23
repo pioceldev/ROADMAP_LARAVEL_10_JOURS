@@ -1,0 +1,199 @@
+================================================================================
+JOUR 09 — TESTS, DÉBOGAGE, LOGS, OPTIMISATION ET RÉVISION
+================================================================================
+
+1. OBJECTIF DU JOUR
+--------------------------------------------------------------------------------
+- apprendre à vérifier que ton code fonctionne avec des tests,
+- diagnostiquer les problèmes avec les logs et les outils de debug,
+- améliorer les requêtes lourdes,
+- renforcer les notions difficiles des jours précédents,
+- préparer la checklist du projet final.
+
+Ce qu'il faut retenir : un code non testé est un code fragile par construction. Les
+logs et les outils de debug existent pour t'aider à comprendre ce qui se passe, pas
+pour deviner.
+
+2. OBJECTIFS PRÉCIS
+--------------------------------------------------------------------------------
+- lancer les tests existants,
+- écrire un test basique de validation ou de requête,
+- écrire un test basique sur une action CRUD ou un endpoint API,
+- utiliser les logs pour comprendre un comportement inattendu,
+- utiliser les outils de debug pour observer les requêtes,
+- optimiser une requête naïve et expliquer pourquoi,
+- réviser activement les notions difficiles des jours 1 à 8,
+- construire une checklist de préparation pour le projet final.
+
+3. PRÉREQUIS
+--------------------------------------------------------------------------------
+- Jours 1 à 8 faits,
+- un projet avec modèles, relations, formulaires, auth, API,
+- savoir ce qu'est une assertion basique, un test de requête, un log.
+
+4. PLANNING (version directe)
+--------------------------------------------------------------------------------
+Matin — 3h
+- 30 min : révision active des jours 1-8,
+- 45 min : tests dans Laravel : concepts et types,
+- 45 min : écriture de tests basiques,
+- 45 min : lancement des tests, lecture des résultats, correction,
+- 15 min : correction.
+
+Pause méridienne — au moins 30 min.
+
+Après-midi — 3h
+- 30 min : débogage, logs, outils de debug,
+- 30 min : optimisation des requêtes, N+1, indexes, requêtes inutiles,
+- 60 min : révision des notions difficiles + mini-défi,
+- 30 min : bilan, commit, suivi, préparation du jour 10.
+
+Soir — 30 min
+- rappel sans notes : tests, logs, N+1, notions difficiles.
+
+5. CE QUE TU DOIS COMPRENDRE AVANT DE CODER
+--------------------------------------------------------------------------------
+- un test est une vérification reproductible,
+- tester ne signifie pas seulement "lancer php artisan test",
+- les factories et seeders aident à préparer des états de test,
+- agir comme un utilisateur dans un test passe par actingAs(),
+- une transaction de test évite de polluer la base,
+- les logs aident à comprendre les erreurs et les comportements inattendus,
+- le N+1 se corrige par eager loading et une organisation des requêtes,
+- une requête lourde est souvent le symptôme d'un choix d'organisation.
+
+6. NOTIONS CLÉS (directes)
+--------------------------------------------------------------------------------
+- tests unitaires et fonctionnels,
+- PHPUnit ou Pest,
+- assertions courantes : status, json, database, seeInDatabase, etc.,
+- factories et seeders dans les tests,
+- actingAs,
+- transactions de test,
+- logs, niveaux de log, lecture des erreurs,
+- debug : mode debug, Debugbar, Telescope si installé,
+- optimisation : eager loading, sélection des colonnes, indexes basiques,
+- évitement des requêtes dans les boucles,
+- révision des notions difficiles.
+
+7. RESSOURCES OFFICIELLES À PRIORITÉ
+--------------------------------------------------------------------------------
+- https://laravel.com/docs/testing
+- https://laravel.com/docs/database-testing
+- https://laravel.com/docs/errors
+- https://laravel.com/docs/eloquent#collections
+- https://laravel.com/docs/debugging
+
+8. EXERCICES PRATIQUES
+--------------------------------------------------------------------------------
+Exercice 9.1 — Lancer les tests existants
+- lance php artisan test,
+- lis les résultats,
+- note le nombre de tests, les échecs, les raisons des échecs.
+
+Exercice 9.2 — Test de validation
+- écris un test qui soumet un formulaire ou une requête invalide,
+- vérifie que la validation échoue comme attendu,
+- note le statut HTTP et les erreurs.
+
+Exercice 9.3 — Test de création
+- écris un test qui crée un article valide,
+- vérifie que l'article a été créé en base,
+- vérifie que la redirection ou la réponse JSON est cohérente.
+
+Exercice 9.4 — Test d'authentification
+- écris un test où un utilisateur connecté accède à une page protégée,
+- écris un test où un utilisateur non connecté est refusé,
+- vérifie le comportement attendu.
+
+Exercice 9.5 — Test d'autorisation
+- écris un test où un utilisateur ne peut pas modifier l'article d'un autre,
+- vérifie que l'action est refusée,
+- vérifie que l'erreur ou la réponse est cohérente.
+
+Exercice 9.6 — Test API
+- écris un test pour un endpoint API :
+  - création d'un article,
+  - réponse JSON attendue,
+  - statut HTTP attendu,
+  - erreur si validation échoue.
+
+Exercice 9.7 — Lecture des logs
+- génère une erreur ou un cas exceptionnel,
+- lis le log correspondant,
+- note ce que le log te permet de comprendre.
+
+Exercice 9.8 — Utiliser un outil de debug
+- installe Debugbar ou utilise le mode debug,
+- observe les requêtes SQL d'une page ou d'un endpoint,
+- identifie une requête inutile ou excessive,
+- corrige-la.
+
+Exercice 9.9 — N+1
+- identifie un endroit où les relations sont chargées dans une boucle,
+- corrige avec with(),
+- compare le nombre de requêtes avant et après.
+
+Exercice 9.10 — Optimisation basique
+- sélectionne seulement les colonnes nécessaires si pertinent,
+- ajoute un index sur une colonne utilisée dans les filtres ou les relations,
+- vérifie l'impact sur les requêtes observées.
+
+Exercice 9.11 — Revue des exceptions
+- vérifie qu'une exception métier est bien levée dans les cas prévus,
+- vérifie que l'utilisateur final voit un comportement cohérent.
+
+Exercice 9.12 — Revue des notions difficiles
+- choisis les 3 notions les plus difficiles pour toi parmi :
+  routes, Blade, migrations, Eloquent, relations, validation, auth, API,
+  organisation,
+- révise-les une par une,
+- note ce qui reste fragile.
+
+Exercice 9.13 — Mini-défi
+- sans copier-coller, réécris un extrait de code déjà écrit dans les jours
+  précédents, mais en l'améliorant :
+  - lisibilité,
+  - validation,
+  - organisation,
+  - handling des erreurs,
+- compare ta version avec l'originale.
+
+9. MINI-PROJET DU JOUR
+--------------------------------------------------------------------------------
+Objectif : améliorer la qualité du projet avant le jour 10.
+
+Ce que tu fais :
+- identifie les points faibles : tests manquants, requêtes lourdes, contrôleurs
+  trop gros, validations à renforcer, erreurs mal gérées,
+- écris ou complète quelques tests essentiels,
+- corrige au moins un problème de debug ou de requête,
+- note les améliorations dans ton suivi,
+- prépare une checklist de validation pour le projet final.
+
+Bonus : écris un test pour un endpoint API ou une policy.
+
+10. CE QUE TU ÉVITES
+--------------------------------------------------------------------------------
+- écrire des tests sans les lancer,
+- écrire des tests qui dépendent de l'ordre d'exécution ou de l'état global,
+- ignorer les logs pendant le débogage,
+- corriger un bug sans comprendre la cause,
+- créer des indexes sans raison,
+- mélanger optimisation et bon sens.
+
+11. GIT
+--------------------------------------------------------------------------------
+    git add .
+    git commit -m "Jour 9 - tests, débogage, logs, optimisation, révision"
+
+12. BILAN ET SUIVI
+--------------------------------------------------------------------------------
+- note ce que tu as fait,
+- note ce que tu as compris,
+- note les difficultés,
+- note les questions pour demain.
+
+================================================================================
+FIN DU JOUR 09
+================================================================================

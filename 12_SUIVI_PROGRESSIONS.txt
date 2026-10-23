@@ -1,0 +1,235 @@
+================================================================================
+12 — SUIVI DE PROGRESSION
+================================================================================
+
+Ce fichier vous permet de suivre votre progression au fil des 10 jours.
+Remplissez-le chaque soir, ou au minimum à la fin de chaque journée.
+
+Ce qui doit être noté :
+- journée terminée ou non,
+- notions comprises,
+- exercices réussis,
+- difficultés rencontrées,
+- compétences maîtrisées,
+- notions à revoir,
+- objectifs non atteints,
+- commentaires personnels.
+
+Utilisez ce fichier aussi pour décider de ce que vous ferez le lendemain.
+
+--------------------------------------------------------------------------------
+COMMENT REMPLIR CE SUIVI
+--------------------------------------------------------------------------------
+
+Pour chaque journée, copiez ou remplissez les lignes suivantes :
+
+    JOUR XX — DATE : JJ/MM/AAAA
+    Terminé : oui / non / partiel
+    Temps travaillé : environ XX heures
+    Ce qui a été fait :
+      - ...
+    Ce qui n'a pas été fait :
+      - ...
+    Ce qui a bien fonctionné :
+      - ...
+    Ce qui a posé problème :
+      - ...
+    Ce qui doit être revu :
+      - ...
+    Prochaines priorités :
+      - ...
+
+Si une notion est vraiment fragile, précisez pourquoi et notez la ressource
+ou l'exercice qui l'a faite difficultée.
+
+--------------------------------------------------------------------------------
+JOUR 01
+--------------------------------------------------------------------------------
+
+JOUR 01 — DATE :
+Terminé : oui / non / partiel
+Temps travaillé :
+Ce qui a été fait :
+Ce qui n'a pas été fait :
+Ce qui a bien fonctionné :
+Ce qui a posé problème :
+Ce qui doit être revu :
+Prochaines priorités :
+
+Notes personnelles :
+
+--------------------------------------------------------------------------------
+JOUR 02
+--------------------------------------------------------------------------------
+
+JOUR 02 — DATE :
+Terminé : oui / non / partiel
+Temps travaillé :
+Ce qui a été fait :
+Ce qui n'a pas été fait :
+Ce qui a bien fonctionné :
+Ce qui a posé problème :
+Ce qui doit être revu :
+Prochaines priorités :
+
+Notes personnelles :
+
+--------------------------------------------------------------------------------
+JOUR 03
+--------------------------------------------------------------------------------
+
+JOUR 03 — DATE :
+Terminé : oui / non / partiel
+Temps travaillé :
+Ce qui a été fait :
+Ce qui n'a pas été fait :
+Ce qui a bien fonctionné :
+Ce qui a posé problème :
+Ce qui doit être revu :
+Prochaines priorités :
+
+Notes personnelles :
+
+--------------------------------------------------------------------------------
+JOUR 04
+--------------------------------------------------------------------------------
+
+JOUR 04 — DATE :
+Terminé : oui / non / partiel
+Temps travaillé :
+Ce qui a été fait :
+Ce qui n'a pas été fait :
+Ce qui a bien fonctionné :
+Ce qui a posé problème :
+Ce qui doit être revu :
+Prochaines priorités :
+
+Notes personnelles :
+
+--------------------------------------------------------------------------------
+JOUR 05
+--------------------------------------------------------------------------------
+
+JOUR 05 — DATE :
+Terminé : oui / non / partiel
+Temps travaillé :
+Ce qui a été fait :
+Ce qui n'a pas été fait :
+Ce qui a bien fonctionné :
+Ce qui a posé problème :
+Ce qui doit être revu :
+Prochaines priorités :
+
+Notes personnelles :
+
+--------------------------------------------------------------------------------
+JOUR 06
+--------------------------------------------------------------------------------
+
+JOUR 06 — DATE :
+Terminé : oui / non / partiel
+Temps travaillé :
+Ce qui a été fait :
+Ce qui n'a pas été fait :
+Ce qui a bien fonctionné :
+Ce qui a posé problème :
+Ce qui doit être revu :
+Prochaines priorités :
+
+Notes personnelles :
+
+--------------------------------------------------------------------------------
+JOUR 07
+--------------------------------------------------------------------------------
+
+JOUR 07 — DATE :
+Terminé : oui / non / partiel
+Temps travaillé :
+Ce qui a été fait :
+Ce qui n'a pas été fait :
+Ce qui a bien fonctionné :
+Ce qui a posé problème :
+Ce qui doit être revu :
+Prochaines priorités :
+
+Notes personnelles :
+
+--------------------------------------------------------------------------------
+JOUR 08
+--------------------------------------------------------------------------------
+
+JOUR 08 — DATE :
+Terminé : oui / non / partiel
+Temps travaillé :
+Ce qui a été fait :
+Ce qui n'a pas été fait :
+Ce qui a bien fonctionné :
+Ce qui a posé problème :
+Ce qui doit être revu :
+Prochaines priorités :
+
+Notes personnelles :
+
+--------------------------------------------------------------------------------
+JOUR 09
+--------------------------------------------------------------------------------
+
+JOUR 09 — DATE :
+Terminé : oui / non / partiel
+Temps travaillé :
+Ce qui a été fait :
+Ce qui n'a pas été fait :
+Ce qui a bien fonctionné :
+Ce qui a posé problème :
+Ce qui doit être revu :
+Prochaines priorités :
+
+Notes personnelles :
+
+--------------------------------------------------------------------------------
+JOUR 10
+--------------------------------------------------------------------------------
+
+JOUR 10 — DATE :
+Terminé : oui / non / partiel
+Temps travaillé :
+Ce qui a été fait :
+Ce qui n'a pas été fait :
+Ce qui a bien fonctionné :
+Ce qui a posé problème :
+Ce qui doit être revu :
+Prochaines priorités :
+
+Notes personnelles :
+
+--------------------------------------------------------------------------------
+RÉSUMÉ FINAL
+--------------------------------------------------------------------------------
+
+Résumez ici vos points forts, vos points faibles, et votre plan après les 10
+jours.
+
+Points forts :
+  - ...
+
+Points faibles ou fragiles :
+  - ...
+
+Ce que je veux approfondiraprès les 10 jours :
+  - ...
+
+Mon premier projet personnel à faire seul :
+  - ...
+
+Ce qui a aidé le plus pendant la formation :
+  - ...
+
+Ce qui a le moins aidé :
+  - ...
+
+Objectifs pour les 30 prochains jours :
+  - ...
+
+================================================================================
+FIN DU FICHIER 12 — SUIVI DE PROGRESSION
+================================================================================

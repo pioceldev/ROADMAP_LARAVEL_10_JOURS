@@ -1,0 +1,178 @@
+================================================================================
+JOUR 07 — API REST, API RESOURCES, SANCTUM, TESTS BASIQUES
+================================================================================
+
+1. OBJECTIF DU JOUR
+--------------------------------------------------------------------------------
+- créer une API REST simple,
+- utiliser les routes API,
+- utiliser les contrôleurs API,
+- construire des réponses JSON cohérentes,
+- utiliser les API Resources si besoin,
+- sécuriser une API avec Sanctum,
+- écrire des tests basiques pour les endpoints.
+
+Ce qu'il faut retenir : une API REST n'est pas juste un contrôleur qui retourne
+du JSON. Il faut penser aux verbes HTTP, aux codes de statut, à la structure des
+réponses, et à l'authentification. La cohérence vaut plus qu'un détail technique.
+
+2. OBJECTIFS PRÉCIS
+--------------------------------------------------------------------------------
+- créer des routes API,
+- créer des contrôleurs API,
+- retourner du JSON,
+- utiliser Laravel API Resources pour formatter les réponses,
+- sécuriser une API avec Sanctum,
+- écrire un test feature basique,
+- vérifier les codes de statut et les erreurs.
+
+3. PRÉREQUIS
+--------------------------------------------------------------------------------
+- Jours 1 à 6 faits,
+- un projet Laravel,
+- une base de données active,
+- comprendre les routes, contrôleurs, Eloquent,
+- comprendre ce qu'est une requête HTTP,
+- savoir lire une réponse JSON.
+
+4. PLANNING (version directe)
+--------------------------------------------------------------------------------
+Matin — 3h
+- 30 min : révision active des jours 1-6,
+- 45 min : routes API, contrôleurs API, JSON,
+- 45 min : API Resources,
+- 45 min : Sanctum et authentification API,
+- 15 min : correction.
+
+Pause méridienne — au moins 30 min.
+
+Après-midi — 3h
+- 30 min : exercices d'identification des erreurs fréquentes,
+- 30 min : exercices d'application dans un projet existant,
+- 60 min : mini-projet du jour,
+- 30 min : lecture ciblée de la documentation,
+- 30 min : bilan, commit, suivi.
+
+Soir — 30 min
+- rappel sans notes : routes API, JSON, API Resources, Sanctum.
+
+5. CE QUE TU DOIS COMPRENDRE AVANT DE CODER
+--------------------------------------------------------------------------------
+- API REST = ressources identifiées par un URI, verbes HTTP, réponses cohérentes,
+- un endpoint API n'est pas une page web,
+- la structure JSON doit être stable et lisible,
+- API Resources aident à ne pas exposer tout le modèle brut,
+- Sanctum est un moyen d'authentifier une API avec des tokens,
+- une API sans tests est fragile par construction,
+- les erreurs doivent retourner le bon code et un message compréhensible.
+
+6. NOTIONS CLÉS (directes)
+--------------------------------------------------------------------------------
+- routes API /api/*,
+- contrôleurs API,
+- responses JSON,
+- codes HTTP : 200, 201, 400, 401, 403, 404, 422, 500,
+- API Resources,
+- Sanctum / tokens,
+- tests feature HTTP,
+- validation des entrées API.
+
+7. RESSOURCES OFFICIELLES À PRIORITÉ
+--------------------------------------------------------------------------------
+- https://laravel.com/docs/routing#api-routes
+- https://laravel.com/docs/controllers
+- https://laravel.com/docs/responses
+- https://laravel.com/docs/eloquent-resources
+- https://laravel.com/docs/sanctum
+- https://laravel.com/docs/http-tests
+
+8. EXERCICES PRATIQUES
+--------------------------------------------------------------------------------
+Exercice 7.1 — Première route API
+- crée une route /api/articles,
+- crée un contrôleur API,
+- retourne une liste en JSON,
+- vérifie la réponse avec un client HTTP ou le navigateur.
+
+Exercice 7.2 — CRUD API basique
+- crée les routes index, show, store, update, destroy,
+- crée un contrôleur API,
+- vérifie chaque endpoint,
+- vérifie les codes de statut.
+
+Exercice 7.3 — API Resources
+- crée une resource pour formatter la réponse,
+- utilise la resource dans un contrôleur,
+- vérifie que le JSON est cohérent.
+
+Exercice 7.4 — Validation en API
+- valide les entrées d'un endpoint API,
+- vérifie que les erreurs sont bien retournées,
+- note le format d'erreur retourné.
+
+Exercice 7.5 — Sanctum
+- installe Sanctum si besoin,
+- crée un endpoint protégé,
+- vérifie qu'un token est requis,
+- vérifie le comportement sans token.
+
+Exercice 7.6 — Test feature basique
+- écris un test qui appelle un endpoint,
+- vérifie le statut,
+- vérifie le contenu JSON,
+- vérifie qu'une erreur retournée a le bon statut.
+
+Exercice 7.7 — Erreurs cohérentes
+- crée une réponse d'erreur standardisée,
+- vérifie que les erreurs retournent un format lisible,
+- note le format utilisé.
+
+Exercice 7.8 — Questions sans support
+- quelle différence entre une route web et une route API ?,
+- comment retourner du JSON ?,
+- à quoi sert une API Resource ?,
+- comment sécuriser une API avec Sanctum ?,
+- comment tester un endpoint API ?.
+
+9. MINI-PROJET DU JOUR
+--------------------------------------------------------------------------------
+Objectif : une API REST simple, cohérente et testable.
+
+Ce que tu fais :
+- des routes API,
+- un contrôleur API,
+- des API Resources si besoin,
+- une protection par Sanctum,
+- un test feature,
+- une gestion cohérente des erreurs.
+
+Ce qu'il faut valider :
+- tu peux refaire l'API de zéro,
+- tu connais le vocabulaire,
+- tu sais organiser une API simple et cohérente.
+
+10. CE QUE TU ÉVITES
+--------------------------------------------------------------------------------
+- retourner tout le modèle brut sans filtre,
+- mélanger pages web et API sans distinction claire,
+- utiliser des codes HTTP au hasard,
+- négliger les erreurs dans une API,
+- créer des endpoints sans validation,
+- chercher des tutos au lieu de la doc,
+- tomber sur des tutoriels trop anciens ou pas à jour.
+
+11. GIT
+--------------------------------------------------------------------------------
+    git add .
+    git commit -m "Jour 7 - API, API Resources, Sanctum, tests"
+
+12. BILAN ET SUIVI
+--------------------------------------------------------------------------------
+- note ce que tu as fait,
+- note ce que tu as compris,
+- note les difficultés,
+- note les questions pour demain.
+
+================================================================================
+FIN DU JOUR 07
+================================================================================

@@ -1,0 +1,205 @@
+================================================================================
+JOUR 01 — PREMIER CONTACT AVEC LARAVEL
+================================================================================
+
+1. OBJECTIF DU JOUR
+--------------------------------------------------------------------------------
+- comprendre ce qu'est Laravel et ce qu'il fait pour toi,
+- lire l'architecture MVC en vrai, pas en mots,
+- installer un projet propre,
+- créer une première route, un premier contrôleur, une première vue,
+- vérifier que tout fonctionne avant d'aller plus loin.
+
+Ce qu'il faut retenir : aujourd'hui, l'objectif est de valider que ton
+environnement marche et que tu arrives à faire le cycle complet requête →
+route → contrôleur → vue → réponse.
+
+2. CE QUE TU DEVIENS À SAVOIR
+--------------------------------------------------------------------------------
+À la fin du jour, tu dois pouvoir :
+- expliquer avec tes mots ce qu'apporte Laravel par rapport à un script PHP
+  tout simple,
+- décrire les grandes lignes du cycle MVC,
+- créer un projet Laravel,
+- lancer le serveur local,
+- écrire une route et un contrôleur,
+- passer des données à une vue,
+- ouvrir une page et dire pourquoi Laravel a fait ce travail.
+
+3. CE QUE TU DEVIENS À SAVOIR FAIRE
+--------------------------------------------------------------------------------
+- expliquer le cycle requête/réponse,
+- créer une route nommée,
+- créer un contrôleur,
+- compiler des vues simples,
+- lire la page générée,
+- identifier un bug quand la page ne correspond pas à ce que tu voulais.
+
+4. PRÉREQUIS
+--------------------------------------------------------------------------------
+- PHP 8.x fonctionnel,
+- Composer installé,
+- un éditeur configuré,
+- une base de commande de base (terminal, cd, ls, cat, php, composer),
+- savoir utiliser la doc quand une commande est obsolète ou différente.
+
+5. PLANNING
+--------------------------------------------------------------------------------
+Matin — 3h
+- 30 min : installation et premier projet,
+- 45 min : architecture MVC et cycle requête,
+- 45 min : route, contrôleur, vue,
+- 45 min : exercices,
+- 15 min : bilan et commit.
+
+Pause méridienne — au moins 30 min.
+
+Après-midi — 3h
+- 30 min : voir la même chose sous un autre angle,
+- 30 min : rigueur de base du framework,
+- 60 min : exercices unifiés,
+- 30 min : lecture minimale de la doc,
+- 30 min : bilan, suivi, questions.
+
+Soir — 30 min
+- répète centrés sur ce que tu as appris.
+
+6. NOTIONS À APPRENDRE
+--------------------------------------------------------------------------------
+- cycle de vie d'une requête Laravel,
+- MVC en théorie et en pratique,
+- installation et structure de base,
+- route, contrôleur, vue,
+- helpers Laravel,
+- commandes Artisan utiles le jour 1,
+- fichiers .env et configuration de base,
+- comment éviter les erreurs classiques de début.
+
+7. RESSOURCES À CONSULTER
+--------------------------------------------------------------------------------
+Documentation officielle en priorité :
+- https://laravel.com/docs
+- https://laravel.com/docs/installation
+- https://laravel.com/docs/routing
+- https://laravel.com/docs/controllers
+- https://laravel.com/docs/views
+
+Ressources disponibles :
+- Laracasts — "30 Days to Learn Laravel" : https://laracasts.com/series/30-days-to-learn-laravel-11
+- Laravel News Bootcamp : https://laravel.com/learn
+
+8. VIDÉOS À REGARDER
+--------------------------------------------------------------------------------
+- pour un premier contact visuel avec la structure :
+  https://www.youtube.com/watch?v=2p6m2c3s4e8
+- pour un rappel rapide de la structure de projet :
+  https://www.youtube.com/watch?v=7zyzs2g9q4a
+
+Règle d'or : regarde une vidéo pour l'intuition, lis la documentation pour les
+détails exacts.
+
+9. COMMANDES UTILES LE JOUR 01
+--------------------------------------------------------------------------------
+- lancer le serveur local :
+    php artisan serve
+- créer un contrôleur :
+    php artisan make:controller MonController
+- créer un modèle :
+    php artisan make:model MonModel
+- voir les routes :
+    php artisan route:list
+
+Tu peux aussi lire :
+- arbre des fichiers /resources/views et /routes,
+- fichier .env pour la configuration locale,
+- README.md pour un aperçu de la structure.
+
+10. EXERCICES PRATIQUES
+--------------------------------------------------------------------------------
+Exercice 01.1 — Installation d'un projet
+- installe un nouveau projet Laravel,
+- crée un .env de base,
+- lance le serveur,
+- vérifie que tu peux accéder à la page d'accueil.
+
+Exercice 01.2 — Description de l'architecture
+- explique l'architecture MVC en 5 lignes maximum,
+- écris ce que chaque composant fait pour toi,
+- donne un exemple concret sur une requête GET.
+
+Exercice 01.3 — Lecture du tour de main
+- lis la page d'accueil du projet,
+- trouve la route associée,
+- trouve le contrôleur si nécessaire,
+- trouve la vue.
+
+Exercice 01.4 — Création d'une route nommée
+- crée une route /bonjour,
+- affiche un message simple,
+- vérifie que la route est bien accessible.
+
+Exercice 01.5 — Passage de données à une vue
+- crée une route qui donne des données à la vue,
+- affiche ces données,
+- vérifie que la vue est bien appelée.
+
+Exercice 01.6 — Contrôleur de base
+- crée un contrôleur,
+- mets une méthode dans le contrôleur,
+- vérifie que le contrôleur fonctionne.
+
+Exercice 01.7 — Amélioration du premier projet
+- ajoute une seconde page avec des données différentes,
+- garde la structure propre,
+- vérifie la cohérence globale.
+
+Exercice 01.8 — Questions de compréhension
+- qu'est-ce qu'une route ?,
+- qu'est-ce qu'un contrôleur ?,
+- qu'est-ce qu'une vue ?,
+- à quoi sert Artisan ?,
+- comment vérifier que ton installation fonctionne ?.
+
+Exercice 01.9 — Répétition sans support
+- refais les exercices 01.1 à 01.7 sans regarder immédiatement le support,
+- compare ce que tu sais faire avec ce que tu as fait.
+
+11. MINI-PROJET DU JOUR
+--------------------------------------------------------------------------------
+Objectif : une application simple qui affiche le cycle MVC.
+
+Ce que tu fais :
+- un projet Laravel,
+- une route /accueil,
+- un contrôleur AccueilController,
+- une vue qui affiche des données,
+- vérifier que tu comprends chaque étape.
+
+Ce qu'il faut valider :
+- tu peux refaire le cycle de zéro,
+- tu connais le vocabulaire,
+- tu sais lire l'arborescence de base.
+
+12. CE QUE TU ÉVITES
+--------------------------------------------------------------------------------
+- installer sans comprendre ce que tu fais,
+- copier sans vérifier,
+- confondre installation de Laravel avec développement d'une application,
+- chercher des tutos au lieu de lire la documentation,
+- tomber sur des tutoriels trop anciens ou pas à jour.
+
+13. GIT
+--------------------------------------------------------------------------------
+    git add .
+    git commit -m "Jour 1 - découverte initiale"
+
+14. BILAN ET SUIVI
+--------------------------------------------------------------------------------
+- note ce que tu as fait,
+- note ce que tu as compris,
+- note les difficultés,
+- note les questions pour demain.
+
+================================================================================
+FIN DU JOUR 01
+================================================================================

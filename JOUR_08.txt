@@ -1,0 +1,184 @@
+================================================================================
+JOUR 08 — FORME REQUESTS, SERVICES, DI, EXCEPTIONS, CONFIG, GIT
+================================================================================
+
+1. OBJECTIF DU JOUR
+--------------------------------------------------------------------------------
+- utiliser les Form Requests pour séparer la validation de la logique,
+- créer des services simples quand ça aide à l'organisation,
+- comprendre la résolution automatique des dépendances dans Laravel,
+- utiliser des exceptions métier,
+- lire et utiliser la configuration et .env correctement,
+- utiliser Git dans un projet Laravel,
+- appliquer quelques bonnes pratiques de base.
+
+Ce qu'il faut retenir : aujourd'hui, tu passes du "ça marche" à "ça reste
+maintenable". Les Form Requests, les services et l'injection de dépendances
+sont des moyens simples d'éviter que le contrôleur ne devienne ingérable.
+
+2. OBJECTIFS PRÉCIS
+--------------------------------------------------------------------------------
+- créer une Form Request,
+- valider avec une Form Request,
+- sortir la logique du contrôleur dans un service simple,
+- utiliser l'injection de dépendances dans les contrôleurs et services,
+- lever et intercepter des exceptions métier,
+- lire .env et config(),
+- utiliser Git correctement dans un projet Laravel,
+- vérifier que le projet reste lisible et testable.
+
+3. PRÉREQUIS
+--------------------------------------------------------------------------------
+- Jours 1 à 7 faits,
+- un projet Laravel,
+- une base de données active,
+- comprendre les routes, contrôleurs, Eloquent, validation,
+- comprendre ce qu'est une requête HTTP,
+- savoir lire une réponse JSON ou une vue.
+
+4. PLANNING (version directe)
+--------------------------------------------------------------------------------
+Matin — 3h
+- 30 min : révision active des jours 1-7,
+- 45 min : Form Requests,
+- 45 min : services simples et DI,
+- 45 min : exceptions métier et configuration,
+- 15 min : correction.
+
+Pause méridienne — au moins 30 min.
+
+Après-midi — 3h
+- 30 min : exercices d'identification des erreurs fréquentes,
+- 30 min : exercices d'application dans un projet existant,
+- 60 min : mini-projet du jour,
+- 30 min : lecture ciblée de la documentation,
+- 30 min : bilan, commit, suivi.
+
+Soir — 30 min
+- rappel sans notes : Form Requests, services, DI, exceptions, config, Git.
+
+5. CE QUE TU DOIS COMPRENDRE AVANT DE CODER
+--------------------------------------------------------------------------------
+- une Form Request valide et nettoie les entrées, pas plus,
+- un service est une classe qui regroupe une logique métier,
+- la DI dans Laravel s'appuie sur le conteneur de dépendances,
+- les exceptions métier aident à distinguer l'erreur technique de l'erreur
+  métier,
+- .env n'est pas un fichier de configuration de production,
+- config() doit utiliser des fichiers de config quand tu as besoin de valeurs
+  réutilisées,
+- Git est un outil de suivi, pas un rempart contre les erreurs.
+
+6. NOTIONS CLÉS (directes)
+--------------------------------------------------------------------------------
+- Form Requests,
+- services simples,
+- injection de dépendances,
+- conteneur de dépendances Laravel,
+- exceptions métier,
+- config et .env,
+- fichiers de configuration Laravel,
+- Git : commits, messages, branches simples,
+- bonnes pratiques de base : contrôleurs courts, validation séparée, logique
+  testable.
+
+7. RESSOURCES OFFICIELLES À PRIORITÉ
+--------------------------------------------------------------------------------
+- https://laravel.com/docs/validation#form-request-validation
+- https://laravel.com/docs/container
+- https://laravel.com/docs/errors
+- https://laravel.com/docs/configuration
+- https://laravel.com/docs/errors#configuration
+
+8. EXERCICES PRATIQUES
+--------------------------------------------------------------------------------
+Exercice 8.1 — Form Request
+- crée une Form Request,
+- déplace la validation dedans,
+- utilise la Form Request dans un contrôleur,
+- vérifie que la validation est bien appliquée.
+
+Exercice 8.2 — Service simple
+- crée une classe de service simple,
+- déplace une logique métier dedans,
+- utilise le service dans un contrôleur,
+- vérifie que le contrôleur reste court.
+
+Exercice 8.3 — DI simple
+- injecte un service dans un contrôleur,
+- vérifie que la résolution automatique fonctionne,
+- vérifie que tu peux tester le service séparément.
+
+Exercice 8.4 — Exception métier
+- crée une exception métier,
+- la lève dans un cas précis,
+- intercepte ou affiche l'erreur correctement,
+- vérifie que l'utilisateur final voit un comportement cohérent.
+
+Exercice 8.5 — Configuration
+- lit une valeur dans .env,
+- utilise une valeur dans config(),
+- vérifie que la config est bien utilisée dans le projet.
+
+Exercice 8.6 — Git basique
+- commit des changements,
+- utilise un message clair,
+- véri1fie que le status Git est cohérent,
+- observe les fichiers modifiés.
+
+Exercice 8.7 — Refactorisation légère
+- reprends un contrôleur du projet,
+- déplace la validation dans une Form Request,
+- déplace une logique dans un service,
+- vérifie que le contrôleur reste lisible.
+
+Exercice 8.8 — Questions sans support
+- à quoi sert une Form Request ?,
+- quelle différence entre une Form Request et une validation dans le contrôleur ?,
+- comment injecter un service dans un contrôleur ?,
+- à quoi sert une exception métier ?,
+- quelle différence entre .env et config() ?.
+
+9. MINI-PROJET DU JOUR
+--------------------------------------------------------------------------------
+Objectif : un contrôleur plus propre et une logique testable.
+
+Ce que tu fais :
+- une Form Request,
+- un service simple,
+- une injection de dépendances,
+- une exception métier si besoin,
+- une config utilisée correctement,
+- une bonne utilisation de Git,
+- vérifier que le projet reste lisible.
+
+Ce qu'il faut valider :
+- tu peux refaire le contrôleur propre de zéro,
+- tu connais le vocabulaire,
+- tu sais organiser une logique métier simple et testable.
+
+10. CE QUE TU ÉVITES
+--------------------------------------------------------------------------------
+- tout mettre dans le contrôleur,
+- créer des services inutiles ou trop larges,
+- mélanger config, .env et valeurs en dur,
+- utiliser des exceptions pour des erreurs utilisateur sans message clair,
+- créer des Form Requests sans réfléchir à leur utilité,
+- chercher des tutos au lieu de la doc,
+- tomber sur des tutoriels trop anciens ou pas à jour.
+
+11. GIT
+--------------------------------------------------------------------------------
+    git add .
+    git commit -m "Jour 8 - Form Requests, services, DI, exceptions, config, Git"
+
+12. BILAN ET SUIVI
+--------------------------------------------------------------------------------
+- note ce que tu as fait,
+- note ce que tu as compris,
+- note les difficultés,
+- note les questions pour demain.
+
+================================================================================
+FIN DU JOUR 08
+================================================================================
